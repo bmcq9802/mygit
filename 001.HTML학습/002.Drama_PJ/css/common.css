@@ -1,0 +1,66 @@
+@charset "utf-8"
+
+/* 
+        선택자 {
+            속성명 : 값;
+        }
+        */
+
+/* 상단부분 */
+#top {
+    /* 글자 가운데 */
+    text-align: center;
+}
+
+/* 메뉴 */
+.menu a,
+menu {
+    color: hotpink;
+    text-decoration: none;
+}
+
+/* 마우스오버시 가상요소 : hover */
+.menu a:hover,
+.menu a.on {
+    /* 윗줄 */
+    text-decoration: overline;
+    /* 색 */
+    color: purple;
+}
+
+/*  컨텐츠 부분 - 테이블  */
+.tbl {
+    /* 테두리 - border: 두께 종류 색상 */
+    border: 5px solid #ccc;
+    /* 가로크기 - width */
+    width: 800px;
+    /* 마진을 이용한 박스 가로 중앙정렬 : 양쪽 auto*/
+    margin: 30px auto;
+}
+
+/* 테이블 데이터(td) */
+.tbl td {
+    /* 글자크기 */
+    font-size: 15px;
+    /* 줄간격 : 숫자는 글자크기기준 배수 */
+    line-height: 2;
+    /*  안쪽여백 */
+    padding: 5px;
+}
+
+/* 드라마제목 */
+.tbl a {
+    /* 글자색 */
+    color: #000;
+    /* 밑줄없앰 */
+    text-decoration: none;
+    /* 글자 두껍게 */
+    font-weight: bold;
+}
+
+/* 마우스 오버시 글자색, 밑줄 */
+/* :hover는 가상클래스 */
+.tbl a:hover {
+    color: red;
+    text-decoration: underline;
+}
