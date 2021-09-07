@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>네이버 요약뉴스 - IT/과학페이지</title>
+  <meta charset="utf-8">
+  <style>
+    /* CSS 코딩구역! */
+    /* 이 방식은 페이지 내부에 구역을 잡고 쓰는 인터널방식 */
+    /* 문법:
+      선택자{속성:값;}
+      -> 선택자는 요소명 또는 이름
+    */
+    a{
+      text-decoration: none;
+    }
+    footer{
+      text-align: center;
+      padding: 10px 0;/* 안쪽여백 위아래 10px 양쪽 0 */
+    }
+    address{
+      font-style: normal;/* 이탤랙없앰 */
+    }
+    
+  </style>
+  <!-- 
+    style 요소: css 문법 구역
+    - 여기에 코딩되는 css설정은 선택된 요소에 모두 적용됨
+   -->
+</head>
+
+<body>
+  <div style="width: 727px; margin: 0 auto;">
+    <!-- 
+      style 속성 : 요소에 직접 css를 변경해주는 속성
+      -> 값으로 css문법을 그대로 쓴다!
+      -> 기본 css문법
+        속성명:값;
+        예) width: 727px; 가로크기를 727px로 설정
+          margin: 0 auto; 바깥여백을 위아래 0, 양쪽 등분할
+     -->
+    <!-- 1.상단영역 -->
+    <header style="text-align: center;">
+      <!-- 1-1.제목 -->
+      <h1>네이버 요약뉴스 - IT/과학페이지</h1>
+      <!-- 1-2.메뉴 -->
+      <nav style="text-decoration: none;">
+        <a href="index.html">
+          <img src="./images/logo.png" alt="네이버로고"
+          style="width: 20px; vertical-align: bottom;">
+        </a> &nbsp;
+        <a href="sub1.html">정치</a> | 
+        <a href="sub2.html">경제</a> | 
+        <a href="sub3.html">사회</a> | 
+        <a href="sub4.html">IT/과학</a> | 
+        <a href="sub5.html">TV/연예</a>
+      </nav>
+    </header>
+    <hr>
+    <!-- hr요소: 가로구분선(CSS디자인시 사용안함) -->
+    <!-- 3.메인컨텐츠 -->
+    <main>
+      <!-- 언론사 정보영역 -->
+      <div>
+        <img src="images/at4-1.png" alt="서울신문로고">
+      </div>
+      <!-- 1. 기사제목 -->
+      <h2>[아하! 우주] 화성에 생명체 흔적있을까?…암석에 ‘구멍’ 뚫은 탐사로보</h2>
+      <!-- 2. 기사이미지 -->
+      <figure>
+        <img src="images/at4-2.jpg" alt="기사이미지">
+        <figcaption>
+          샘플 채취 대상인 암석 로셰트와 퍼서비어런스가 뚫은 구멍의 모습. 사진=NASA
+        </figcaption>
+      </figure>
+      
+      <!-- 3. 기사내용 -->
+      <p>화성의 고대 호수 바닥에서 생명체 흔적을 찾고있는 미 항공우주국(NASA)의 탐사로보 ‘퍼서비어런스’(Perseverance)가 샘플 암석에 정교한 구멍을 뚫는데 성공했다. 최근 NASA 측은 연이어 퍼서비어런스의 탐사 성과를 사진으로 공개하고 조만간 샘플 채취에 나설 것이라고 밝혔다.</p>
+      <p>NASA가 트위터 등에 공개한 이미지들을 보면 화성의 붉은 표면 위로 마치 스테이크처럼 길쭉한 암석이 보인다. ‘로셰트'(Rochette)라고 명명된 이 암석이 바로 샘플 채취 대상으로, 퍼서비어런스는 사전 작업으로 드릴로 동그랗게 구멍을 뚫는데 성공했다. 약 1㎝ 깊이로 정교하게 뚫린 구멍을 통해 전문가들은 암석 안의 성분을 파악하는데 NASA 측은 이를 '암석 안으로 들어가는 창문을 열었다'고 묘사했다. 또한 지난 1일 NASA가 공개한 짤막한 영상에는 퍼서비어런스에 장착된 드릴이 작동하는 모습이 담겨있다.</p>
+      <p>앞서 지난달 6일에도 퍼서비어런스는 화성 표면을 드릴로 뚫는 데는 성공했지만 목표 암석이 부서져 버리면서 샘플 튜브에 들어가지 못해 시료를 채취하는 데 실패했다. 이렇게 퍼서비어런스가 샘플 채취에 나서는 것은 고대 생명체의 흔적을 찾는 첫번째 단추이기 때문이다. 퍼서비어런스는 여기서 얻어진 샘플 데이터를 전송하는데, 2031년에는 유럽우주국(ESA)과 공동 발사할 탐사선이 직접 샘플을 가지고 지구로 돌아와 본격적인 분석이 이루어질 전망이다.</p>
+      
+      박종익 기자 pji@seoul.co.kr
+
+<br><br>
+
+      <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=105&oid=081&aid=0003213433" target="_blank">원본기사</a>
+      
+    </main>
+    <hr>
+    
+    <!-- 4.하단정보 -->
+    <footer>
+        <address>
+          서울시 강남구 대호빌딩 8층 <br>
+          대표 : Tom Brace Parker <br>
+          전화 : 010-3333-3333
+        </address>
+        <!--
+          address 요소 : 주소를 담는 요소 (블록요소 옆에 아무도 못온다.)
+         -->
+    </footer>
+  </div>
+
+  <!-- 
+    [HTML 핵심 요소들 - 페이지에 단 한번만 등장!]
+    1. html : 최상위 부모
+    2. head : 기본정보 영역
+    3. body : 화면출력 영역
+
+    [레이아웃 관련 요소들]
+    1. div : divide / division 구분구역을 위한 요소
+    2. header : 머리부분 
+    3. footer : 하단부분
+    4. main : 중앙 내용부분(한 웹 페이지에 하나만 씀)
+    5. nav : 네비게이션 영역
+
+    ※ 레이아웃용 태그인 header, footer, main, nav 등은
+      div를 구체적 내용으로 변경한 형제들이다!
+      (시멘틱태그-유의미한 요소)
+
+
+   -->
+
+</body>
+
+</html>

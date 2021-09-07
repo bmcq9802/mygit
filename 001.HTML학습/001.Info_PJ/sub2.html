@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>네이버 요약뉴스 - 경제페이지</title>
+  <meta charset="utf-8">
+  <style>
+    /* CSS 코딩구역! */
+    /* 이 방식은 페이지 내부에 구역을 잡고 쓰는 인터널방식 */
+    /* 문법:
+      선택자{속성:값;}
+      -> 선택자는 요소명 또는 이름
+    */
+    a {
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      /* 안쪽여백 위아래 10px 양쪽 0 */
+    }
+
+    address {
+      font-style: normal;
+      /* 이탤랙없앰 */
+    }
+  </style>
+  <!-- 
+    style 요소: css 문법 구역
+    - 여기에 코딩되는 css설정은 선택된 요소에 모두 적용됨
+   -->
+</head>
+
+<body>
+  <div style="width: 727px; margin: 0 auto;">
+    <!-- 
+      style 속성 : 요소에 직접 css를 변경해주는 속성
+      -> 값으로 css문법을 그대로 쓴다!
+      -> 기본 css문법
+        속성명:값;
+        예) width: 727px; 가로크기를 727px로 설정
+          margin: 0 auto; 바깥여백을 위아래 0, 양쪽 등분할
+     -->
+    <!-- 1.상단영역 -->
+    <header style="text-align: center;">
+      <!-- 1-1.제목 -->
+      <h1>네이버 요약뉴스 - 경제페이지</h1>
+      <!-- 1-2.메뉴 -->
+      <nav style="text-decoration: none;">
+        <a href="index.html">
+          <img src="./images/logo.png" alt="네이버로고" style="width: 20px; vertical-align: bottom;">
+        </a> &nbsp;
+        <a href="sub1.html">정치</a> |
+        <a href="sub2.html">경제</a> |
+        <a href="sub3.html">사회</a> |
+        <a href="sub4.html">IT/과학</a> |
+        <a href="sub5.html">TV/연예</a>
+      </nav>
+    </header>
+    <hr>
+    <!-- hr요소: 가로구분선(CSS디자인시 사용안함) -->
+    <!-- 3.메인컨텐츠 -->
+    <main>
+      <!-- 언론사 정보영역 -->
+      <div>
+        <img src="images/at2-1.png" alt="뉴스1로고">
+      </div>
+      <!-- 1. 기사제목 -->
+      <h2>홍남기 "한-러 경제협력 업그레이드해야…디지털·그린 확장"</h2>
+      <!-- 2. 기사이미지 -->
+      <figure>
+        <img src="images/at2-2.jpg" alt="기사이미지">
+        <figcaption>
+          <small>홍남기 경제부총리 겸 기획재정부 장관. /뉴스1 DB © News1 송원영 기자</small>
+        </figcaption>
+      </figure>
+      
+      <!-- 3. 기사내용 -->
+      <p>(세종=뉴스1) 권혁준 기자 = 홍남기 경제부총리 겸 기획재정부 장관은 3일 "한-러 경제협력의 고리를 한 차원 높게 보강해 연결하고 창출해야한다"고 말했다.</p>
+
+      <p>홍 부총리는 이날 오전 서울 강남구 트레이드타워와 러시아 블라디보트톡의 극방연방대를 연결해 온-오프라인 합동 개최된 동방경제포럼 '한-러 비즈니스 다이얼로그' 영상 축사에서 "글로벌 성장 패러다임이 구조적으로 바뀌는 가운데, 한단계 진화된 경제협력 2.0으로 새롭게 업그레이드해야 한다"며 이같이 밝혔다.</p>
+      
+      <p>홍 부총리는 이를 위해 디지털·그린 등 신산업분야의 협력 확장이 필요하다고 강조했다.</p>
+      
+      <p>그는 "인공지능(AI)과 5G 등 디지털 신기술이 경제와 안보의 핵심요소로 부각되고 있고, 기후 변화 대응을 위한 저탄소·신재생에너지의 중요성도 강조되고 있다"면서 "러시아의 원천기술과 한국의 정보통신(ICT)·응용기술을 접목하는 한-러 혁신 플랫폼을 더욱 발전시켜 디지털 협력을 강화해야한다"고 말했다.</p>
+      
+      <p>이와 함께 <q>북극 수소기지 조성에 한국 기업 참여를 통해 그린분야 등으로도 협력 외연을 넓혀 나갈 필요가 있다</q>고 덧붙였다.</p>
+      권혁준 기자(starburyny@news1.kr)
+
+      <br><br>
+      
+      <a href="https://news.naver.com/main/read.naver?mode=LSD&mid=shm&sid1=101&oid=421&aid=0005581360" target="_blank">원본기사</a>
+
+      <hr>
+
+      <h3>뉴스1 주요뉴스</h3>
+      <!-- 순서없는 리스트 -->
+      <ul>
+        <li>
+          <a href="https://www.news1.kr/articles/?4423275" target="_blank">
+            故김자옥 못잊은 남편 오승근 "마지막 메모에 '사랑해, 아빠'"
+          </a>
+        </li>
+        <li>
+          <a href="https://www.news1.kr/articles/?4423546" target="_blank">
+            D.P. 출신 윤형빈 "성전환 탈영범 잡기도"
+          </a>
+        </li>
+        <li>
+          <a href="https://www.news1.kr/articles/?4421970" target="_blank">
+            한혜진 "첫키스? 연애 때 남친이 하고싶은대로 다하게 뒀다"
+          </a>
+        </li>
+      </ul>
+
+      
+    </main>
+    <hr>
+
+    <!-- 4.하단정보 -->
+    <footer>
+      <address>
+        서울시 강남구 대호빌딩 8층 <br>
+        대표 : Tom Brace Parker <br>
+        전화 : 010-3333-3333
+      </address>
+      <!--
+          address 요소 : 주소를 담는 요소 (블록요소 옆에 아무도 못온다.)
+         -->
+    </footer>
+  </div>
+
+  <!-- 
+    [HTML 핵심 요소들 - 페이지에 단 한번만 등장!]
+    1. html : 최상위 부모
+    2. head : 기본정보 영역
+    3. body : 화면출력 영역
+
+    [레이아웃 관련 요소들]
+    1. div : divide / division 구분구역을 위한 요소
+    2. header : 머리부분 
+    3. footer : 하단부분
+    4. main : 중앙 내용부분(한 웹 페이지에 하나만 씀)
+    5. nav : 네비게이션 영역
+
+    ※ 레이아웃용 태그인 header, footer, main, nav 등은
+      div를 구체적 내용으로 변경한 형제들이다!
+      (시멘틱태그-유의미한 요소)
+
+
+   -->
+
+</body>
+
+</html>

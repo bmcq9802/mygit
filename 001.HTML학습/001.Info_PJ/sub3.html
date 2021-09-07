@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>네이버 요약뉴스 - 사회페이지</title>
+  <meta charset="utf-8">
+  <style>
+    /* CSS 코딩구역! */
+    /* 이 방식은 페이지 내부에 구역을 잡고 쓰는 인터널방식 */
+    /* 문법:
+      선택자{속성:값;}
+      -> 선택자는 요소명 또는 이름
+    */
+    a{
+      text-decoration: none;
+    }
+    footer{
+      text-align: center;
+      padding: 10px 0;/* 안쪽여백 위아래 10px 양쪽 0 */
+    }
+    address{
+      font-style: normal;/* 이탤랙없앰 */
+    }
+    
+  </style>
+  <!-- 
+    style 요소: css 문법 구역
+    - 여기에 코딩되는 css설정은 선택된 요소에 모두 적용됨
+   -->
+</head>
+
+<body>
+  <div style="width: 727px; margin: 0 auto;">
+    <!-- 
+      style 속성 : 요소에 직접 css를 변경해주는 속성
+      -> 값으로 css문법을 그대로 쓴다!
+      -> 기본 css문법
+        속성명:값;
+        예) width: 727px; 가로크기를 727px로 설정
+          margin: 0 auto; 바깥여백을 위아래 0, 양쪽 등분할
+     -->
+    <!-- 1.상단영역 -->
+    <header style="text-align: center;">
+      <!-- 1-1.제목 -->
+      <h1>네이버 요약뉴스 - 사회페이지</h1>
+      <!-- 1-2.메뉴 -->
+      <nav style="text-decoration: none;">
+        <a href="index.html">
+          <img src="./images/logo.png" alt="네이버로고"
+          style="width: 20px; vertical-align: bottom;">
+        </a> &nbsp;
+        <a href="sub1.html">정치</a> | 
+        <a href="sub2.html">경제</a> | 
+        <a href="sub3.html">사회</a> | 
+        <a href="sub4.html">IT/과학</a> | 
+        <a href="sub5.html">TV/연예</a>
+      </nav>
+    </header>
+    <hr>
+    <!-- hr요소: 가로구분선(CSS디자인시 사용안함) -->
+    <!-- 3.메인컨텐츠 -->
+    <main> 
+      <!-- 언론사 정보영역 -->
+      <div>
+        <img src="images/at3-1.png" alt="한겨레로고">
+      </div>
+      <!-- 1. 기사제목 -->
+      <h2>부산 6일부터 사회적 거리두기 3단계로 낮춘다</h2>
+      <!-- 2. 기사이미지 -->
+      <figure>
+        <img src="images/at3-2.jpg" alt="기사이미지">
+        <figcaption>부산 해운대구 옛 해운대역 광장에 마련된 임시선별검사소에서 시민들이 코로나19 검사를 받고 있다. &lt;연합뉴스&gt; 제공</figcaption>
+      </figure>
+      
+      <!-- 3. 기사내용 -->
+      <p>6일부터 부산의 사회적 거리두기가 3단계로 내려간다. 지난달 10일 4단계로 올리고 27일 만이다.</p>
+
+      <p>이병진 부산시 행정부시장은 “6일부터 다음달 3일까지 4주 동안 사회적 거리두기를 현재의 4단계에서 3단계로 완화한다”고 3일 밝혔다.</p>
+      
+      <p>6일부터 사회적 거리두기가 3단계가 되면 부산에서 사적모임은 코로나19 백신 예방접종을 끝내고 2주가 지난 사람을 포함해서 8명까지 가능하다. 행사와 집회는 49명까지 가능하다. 식당·카페·편의점·포장마차는 밤 10시까지 매장 안에서 취식이 가능하고, 밤 10시부터 다음날 새벽 5시까지는 포장과 배달만 허용된다.</p>
+      
+      <p>그동안 영업이 중단되었던 유흥시설 등 1그룹 시설과 노래연습장은 영업을 재개하되 밤 10시부터 다음날 새벽 5시까지 운영을 중단한다. 목욕탕은 현재와 같이 밤 10시 이후 운영을 제한하고 사우나 등 한증시설은 운영을 금지한다. 부산시는 숨은 감염자를 조속히 찾기 위해 꾸준히 감염자가 발생하는 고위험시설과 다중이용시설의 정기 진단검사를 지속하겠다고 밝혔다.</p>
+
+      김광수(kskim@hani.co.kr)
+
+      원본기사
+    </main>
+    <hr>
+    
+    <!-- 4.하단정보 -->
+    <footer>
+        <address>
+          서울시 강남구 대호빌딩 8층 <br>
+          대표 : Tom Brace Parker <br>
+          전화 : 010-3333-3333
+        </address>
+        <!--
+          address 요소 : 주소를 담는 요소 (블록요소 옆에 아무도 못온다.)
+         -->
+    </footer>
+  </div>
+
+  <!-- 
+    [HTML 핵심 요소들 - 페이지에 단 한번만 등장!]
+    1. html : 최상위 부모
+    2. head : 기본정보 영역
+    3. body : 화면출력 영역
+
+    [레이아웃 관련 요소들]
+    1. div : divide / division 구분구역을 위한 요소
+    2. header : 머리부분 
+    3. footer : 하단부분
+    4. main : 중앙 내용부분(한 웹 페이지에 하나만 씀)
+    5. nav : 네비게이션 영역
+
+    ※ 레이아웃용 태그인 header, footer, main, nav 등은
+      div를 구체적 내용으로 변경한 형제들이다!
+      (시멘틱태그-유의미한 요소)
+
+
+   -->
+
+</body>
+
+</html>
