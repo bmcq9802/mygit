@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <title>한국 최신 드라마 리스트</title>
     <style>
+        /* 테이블 공통 */
+        .tbl {
+            font-family: "궁서체""굴림", ;
+            color: black;
+            border-collapse: collapse;
+        }
+
+        /* 드라마 리스트 테이블 */
+
         #drama {
             font-family: "궁서체""굴림", ;
             /* 글자체 - 순서대로 있는체를 적용함 */
@@ -51,6 +60,11 @@
             padding: 8px 10px;
         }
 
+        /* thead에 윗줄 넣기 */
+        #drama .tbl tr {
+            border-top: blue;
+        }
+
         /* td에 밑줄 넣기 */
         #drama tbody td {
             border-bottom: 1px solid #ccc;
@@ -74,12 +88,12 @@
         }
 
         /* 중앙부분 몇번째 요소의 글자색 변경하기 */
-        #drama tr:nth-child(4) td {
+        #drama tbody tr:nth-child(4) td {
             color: chocolate
         }
 
         /* 중앙부분 짝수번째 요소 배경색 넣기 */
-        #drama tr:nth-child(even) td {
+        #drama tbody tr:nth-child(even) td {
             background: cornflowerblue;
         }
 
@@ -91,9 +105,30 @@
         }
 
         /* 구분 테이블 박스 */
-        .gubun{
-            width:  1000px;
-            margin: 0 auto; /* 마영오! 중앙! */
+        .gubun {
+            width: 1000px;
+            margin: 0 auto;
+            /* 마영오! 중앙! */
+        }
+
+        /* 구분테이블 */
+        #gubun {
+            font-size: 20px;
+            border: 1px solid black;
+        }
+
+        #gubun td {
+            padding: 10px;
+        }
+
+        /* 구분 테이블 첫번째 tr의 첫번째 td의 오른쪽 보더 */
+        #gubun tr:first-child td:first-child {
+            border-right: 1px dotted red
+        }
+
+        /* 구분 테이블의 tr중 앞에 tr 형제가 있는 tr의 td만 윗쪽보더 */
+        #gubun tr+tr td {
+            border-top: 1px dotted red;
         }
     </style>
 </head>
@@ -227,7 +262,7 @@
 
     <!-- 구분테이블 -->
     <div class="gubun">
-        <table id="gubun">
+        <table id="gubun" class="tbl">
             <tr>
                 <td rowspan="4">구분</td>
                 <td>월화 : 월화드라마</td>
