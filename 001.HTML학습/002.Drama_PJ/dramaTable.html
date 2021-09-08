@@ -35,8 +35,10 @@
         #drama caption {
             font-size: 35px;
             font-weight: bold;
-            letter-spacing: 5px; /* 글자간격 */
-            word-spacing: 5px; /* 단어간격 */
+            letter-spacing: 5px;
+            /* 글자간격 */
+            word-spacing: 5px;
+            /* 단어간격 */
 
             padding-top: 50px;
             padding-bottom: 20px;
@@ -50,27 +52,31 @@
         }
 
         /* td에 밑줄 넣기 */
-#drama tbody td {
-    border-bottom : 1px solid #ccc;
-}
+        #drama tbody td {
+            border-bottom: 1px solid #ccc;
+        }
 
-/* th에 윗줄 아랫줄 두껍게 넣기 */
-#drama th {
-    border-top: 2px solid rgb(243, 6, 6);
-    border-bottom : 2px solid rgb(104, 56, 236)
-}
+        /* th에 윗줄 아랫줄 두껍게 넣기 */
+        #drama th {
+            border-top: 2px solid rgb(243, 6, 6);
+        }
 
-/* 중앙부분 마지막 td에 아랫줄 두껍게 */
-.ltr td {
-    border-bottom-style: bold; 
-}
+        /* 중앙부분 마지막 td에 아랫줄 두껍게 */
+        /* :last-child 가상클래스 - 마지막 자식요소 선택 */
+        #drama tr:last-child td {
+            border-bottom: 2px solid #555;
+        }
 
-/* 하단부분 */
-#drama tfoot td {
-    text-align: center;
-    padding: 45px 0; /* 위아래45px 양쪽0 */
-    border : solid blanchedalmond
-}
+        /* 중앙부분 첫번째 td에 윗줄 두껍게 */
+        /* :first-child 가상클래스 - 첫번째요소 선택 */
+
+
+        /* 하단부분 */
+        #drama tfoot td {
+            text-align: center;
+            padding: 45px 0;
+            /* 위아래45px 양쪽0 */
+        }
     </style>
 </head>
 
