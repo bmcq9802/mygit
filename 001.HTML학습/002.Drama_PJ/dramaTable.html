@@ -57,25 +57,43 @@
         }
 
         /* th에 윗줄 아랫줄 두껍게 넣기 */
-        #drama th {
+        #drama tbody th {
             border-top: 2px solid rgb(243, 6, 6);
         }
 
         /* 중앙부분 마지막 td에 아랫줄 두껍게 */
         /* :last-child 가상클래스 - 마지막 자식요소 선택 */
-        #drama tr:last-child td {
-            border-bottom: 2px solid #555;
+        #drama tbody tr:last-child td {
+            border-bottom: 2px solid red;
         }
 
         /* 중앙부분 첫번째 td에 윗줄 두껍게 */
         /* :first-child 가상클래스 - 첫번째요소 선택 */
+        #drama tbody tr:first-child td {
+            border-top: 2px solid blue;
+        }
 
+        /* 중앙부분 몇번째 요소의 글자색 변경하기 */
+        #drama tr:nth-child(4) td {
+            color: chocolate
+        }
+
+        /* 중앙부분 짝수번째 요소 배경색 넣기 */
+        #drama tr:nth-child(even) td {
+            background: cornflowerblue;
+        }
 
         /* 하단부분 */
         #drama tfoot td {
             text-align: center;
             padding: 45px 0;
             /* 위아래45px 양쪽0 */
+        }
+
+        /* 구분 테이블 박스 */
+        .gubun{
+            width:  1000px;
+            margin: 0 auto; /* 마영오! 중앙! */
         }
     </style>
 </head>
@@ -191,7 +209,7 @@
                 <td>the 음악</td>
                 <td>지진희, 윤세아</td>
                 <td>tvN</td>
-                <td>수목</td>
+                <td>금토</td>
                 <td>오후 10:50</td>
                 <td>20부작</td>
             </tr>
@@ -200,16 +218,32 @@
                 <td>the 마술</td>
                 <td>지진희, 윤세아</td>
                 <td>tvN</td>
-                <td>수목</td>
+                <td>토일</td>
                 <td>오후 10:50</td>
                 <td>20부작</td>
             </tr>
         </tbody>
-
-
-
-
     </table>
+
+    <!-- 구분테이블 -->
+    <div class="gubun">
+        <table id="gubun">
+            <tr>
+                <td rowspan="4">구분</td>
+                <td>월화 : 월화드라마</td>
+            </tr>
+            <tr>
+                <td>수목 : 수목드라마</td>
+            </tr>
+            <tr>
+                <td>금토 : 금토드라마</td>
+            </tr>
+            <tr>
+                <td>토일 : 토일드라마</td>
+            </tr>
+        </table>
+        <!-- rowspan 속성은 위아래 행을 합치는 속성 여기서는 4줄을 합치므로 값을 4로 설정함 -->
+    </div>
 </body>
 
 </html>
