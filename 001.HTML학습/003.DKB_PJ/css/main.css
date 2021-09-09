@@ -75,6 +75,32 @@ body {
 
 /* 캐릭터 이름 */
 .ci span{
-    display: block; 
-    text-align: center;
+    display: block;  /* 블록변경 */
+    text-align: center; /* 가로중앙 적용! */
+    margin-top: -22px;
+    /* 비율로 이미지가 변경되므로 마진도 상대적으로 변경되게 함 */
+}
+
+/* 캐릭터 이름 이미지 */
+.ci span img {
+    width: 60%;
+}
+
+/* 캐릭터 이름 첫번째 이미지 숨기기 */
+/* display:none;  사용 */
+.ci span img:first-child{
+    display: none;
+}
+
+/* .cat박스에 마우스오버시 */
+/* 캐릭터 이름 첫번째 이미지 보이기 */
+/* 원래 이미지는 display:inline; */
+.cat:hover .ci span img:first-child {
+    display: inline;
+}
+
+/* .cat박스에 마우스오버시 */
+/* 캐릭터 이름 마지막 이미지 숨기기 */
+.cat:hover .ci span img:last-child {
+    display:none;
 }
