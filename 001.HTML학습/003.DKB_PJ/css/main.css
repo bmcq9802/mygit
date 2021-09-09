@@ -67,8 +67,14 @@ body {
 
 
 /* 캐릭터 이미지 */
-.cat>img {
+.ci>img /* > 직계자식 이미지만! 만약 띄어쓰기만 하면 모든 자식을 다 바꿔버린다 */{
     width: 100%
         /*이미지의 height는 자동(비율유지) */
     ;
+}
+
+/* 캐릭터 이름 */
+.ci span{
+    display: block; 
+    text-align: center;
 }
