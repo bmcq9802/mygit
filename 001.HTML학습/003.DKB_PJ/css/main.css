@@ -33,9 +33,10 @@ body {
     width: 90%;
     /* height: 300px; 
     높이값이 없을때 자식요소 float때문에 자식요소를 인식하지 못함 */
-    outline: 5px dashed lime;
+    /* outline: 5px dashed lime; */
 
     margin: 0 auto;
+    margin-top: 50px;
 }
 
 
@@ -53,13 +54,13 @@ body {
     /* 4등분 */
     height: 100%;
     /* 높이값이 없으면 auto */
-    outline: 10px dotted blue;
+    /* outline: 10px dotted blue; */
     float: left;
     /* float : 블록요소가 옆으로 흐르게 함  */
 
     /* 안쪽여백 */
     padding: 5px;
-        
+
     /* 마진 패딩 포함하기 */
     box-sizing: border-box;
 }
@@ -67,17 +68,22 @@ body {
 
 
 /* 캐릭터 이미지 */
-.ci>img /* > 직계자식 이미지만! 만약 띄어쓰기만 하면 모든 자식을 다 바꿔버린다 */{
+.ci>img
+
+/* > 직계자식 이미지만! 만약 띄어쓰기만 하면 모든 자식을 다 바꿔버린다 */
+    {
     width: 100%
         /*이미지의 height는 자동(비율유지) */
     ;
 }
 
 /* 캐릭터 이름 */
-.ci span{
-    display: block;  /* 블록변경 */
-    text-align: center; /* 가로중앙 적용! */
-    margin-top: -22px;
+.ci span {
+    display: block;
+    /* 블록변경 */
+    text-align: center;
+    /* 가로중앙 적용! */
+    margin-top: -22%;
     /* 비율로 이미지가 변경되므로 마진도 상대적으로 변경되게 함 */
 }
 
@@ -88,7 +94,7 @@ body {
 
 /* 캐릭터 이름 첫번째 이미지 숨기기 */
 /* display:none;  사용 */
-.ci span img:first-child{
+.ci span img:first-child {
     display: none;
 }
 
@@ -102,5 +108,35 @@ body {
 /* .cat박스에 마우스오버시 */
 /* 캐릭터 이름 마지막 이미지 숨기기 */
 .cat:hover .ci span img:last-child {
-    display:none;
+    display: none;
 }
+
+/* 캐릭터 설명 박스 */
+.cd {
+    background: url(../images/eachBG.jpg) no-repeat center/cover;
+
+}
+
+/* 캐릭터설명 타이틀 */
+.cd h3 {
+    padding: 20px;
+}
+
+/* 캐릭터설명 문단 */
+
+.cd p {
+    padding: 10px;
+/* 스타일 */
+font-style: inherit;
+/* 두께 */
+font-weight: bold;
+/* 크기 */
+font-size: 14px;
+/* 줄간격 */
+line-height: 1.4;
+/* 체 */
+font-family: '궁서';
+}
+
+/* font: 스타일 두께 크기 / 줄간격 글자체;
+    font: 스 두 크 / 줄 체;*/
