@@ -47,35 +47,35 @@ padding-top, padding-left, padding-right, padding-bottom
 
 [ 배경 설정하기 ]
 1. 배경색
-    background-color: rgb(132, 226, 140);
+background-color: rgb(132, 226, 140);
 
-     2. 배경이미지
-    background-image: url(../images/bg_logo_a_01.png);
+ 2. 배경이미지
+background-image: url(../images/bg_logo_a_01.png);
 
-     3. 배경반복여부 
-    - 종류 : repeat, no-repeat, repeat-x, repeat-
-    background-repeat: no-repeat;
+3. 배경반복여부 
+- 종류 : repeat, no-repeat, repeat-x, repeat-
+background-repeat: no-repeat;
 
-     4. 배경고정 : 스크롤해도 배경은 보이는 화면에 고정됨
-    background-attachment: fixed;
+4. 배경고정 : 스크롤해도 배경은 보이는 화면에 고정됨
+background-attachment: fixed;
 
-     5. 배경위치 
-    - 가로값 : 수치 (px,%), left, center, right
-    - 세로값 : 수치 (px, %), top, center, bottom
-    - 별도설정 속성
-        background-position-x
-        background-position-y
+5. 배경위치 
+ - 가로값 : 수치 (px,%), left, center, right
+ - 세로값 : 수치 (px, %), top, center, bottom
+ - 별도설정 속성
+    -position-x
+    -position-y
 
-    background-position: center;
+background-position: center;
 
-     6. 배경크기 
-    - 가로크기 : 수치(px, %), auto(비율유지)
-    - 세로크기 : 수치(px, %), auto(비율유지)
-    - cover : 비율에 맞춰서 화면채우기(빈틈없음)
-    - contain : 이미지를 화면에 맞게 채우기(빈틈있음)
+6. 배경크기 
+ - 가로크기 : 수치(px, %), auto(비율유지)
+ - 세로크기 : 수치(px, %), auto(비율유지)
+ - cover : 비율에 맞춰서 화면채우기(빈틈없음)
+ - contain : 이미지를 화면에 맞게 채우기(빈틈있음)
 
-    background-size: auto 200px;
+background-size: auto 200px;
 
-    7. 배경 한번에 세팅하기
-     background: 색 이미지 반복 고정 위치/크기;
-     -색이반고윙/크;
+ 7. 배경 한번에 세팅하기
+ background: 색 이미지 반복 고정 위치/크기;
+ -색이반고윙/크;
