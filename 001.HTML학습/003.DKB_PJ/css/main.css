@@ -2,24 +2,26 @@
 /* 도깨비 메인 CSS - main.css */
 
 /* 초기화 세팅 */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
-    height: 100%; /* 보이는 화면만큼 화면 높이값 채우기 */
+    height: 100%;
+    /* 보이는 화면만큼 화면 높이값 채우기 */
 }
 
-body{
+body {
     /* 배경 한번에 세팅하기 */
     /* background: 색 이미지 반복 고정 위치/크기; */
-    background: url(../images/bg_mainvisual.jpg)
-    no-repeat center/cover;
+    background: url(../images/bg_mainvisual.jpg) no-repeat center/cover;
     background-attachment: fixed;
 }
 
 /* 상단영역 */
 
 /* 로고박스 */
-.logo img{ /* 이미지 마진값 조정 */
+.logo img {
+    /* 이미지 마진값 조정 */
     margin-top: 45px;
     margin-left: 70px;
 }
@@ -27,23 +29,46 @@ body{
 /* 2. 메인영역 */
 
 /* 캐릭터박스 */
-#cbx{
-    width: 1000px;
-    height: 300px;
+#cbx {
+    width: 90%;
+    /* height: 300px; 
+    높이값이 없을때 자식요소 float때문에 자식요소를 인식하지 못함 */
     outline: 5px dashed lime;
+
+    margin: 0 auto;
+}
+
+
+
+/* 가상요소로 float 해제 */
+.clb::after {
+    content: '';
+    display: block;
+    clear: both;
 }
 
 /* 개별 캐릭터박스 공통 */
 .cat {
-width: 25%; /* 4등분 */
-height: 100%; /* 높이값이 없으면 auto */
-outline: 10px dotted blue;
+    width: 25%;
+    /* 4등분 */
+    height: 100%;
+    /* 높이값이 없으면 auto */
+    outline: 10px dotted blue;
     float: left;
     /* float : 블록요소가 옆으로 흐르게 함  */
+
+    /* 안쪽여백 */
+    padding: 5px;
+        
+    /* 마진 패딩 포함하기 */
+    box-sizing: border-box;
 }
 
+
+
 /* 캐릭터 이미지 */
-.cat>img{
+.cat>img {
     width: 100%
-    /*이미지의 height는 자동(비율유지) */;
+        /*이미지의 height는 자동(비율유지) */
+    ;
 }
