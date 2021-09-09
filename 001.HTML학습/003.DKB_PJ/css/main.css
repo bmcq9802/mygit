@@ -126,17 +126,15 @@ body {
 
 .cd p {
     padding: 10px;
-/* 스타일 */
-font-style: inherit;
-/* 두께 */
-font-weight: bold;
-/* 크기 */
-font-size: 14px;
-/* 줄간격 */
-line-height: 1.4;
-/* 체 */
-font-family: '궁서';
-}
 
 /* font: 스타일 두께 크기 / 줄간격 글자체;
     font: 스 두 크 / 줄 체;*/
+
+    font: italic bold 14px/1.5 '오이';
+
+    text-align: justify; /* 양쪽정렬 */
+}
+
+
+
+    
