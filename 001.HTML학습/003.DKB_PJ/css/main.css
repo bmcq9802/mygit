@@ -239,7 +239,11 @@ transition: margin-top .8s ease-in-out;
 }
 /* 하단링크 */
 ul.bm{
-    margin: 0;
+    width: 800px;
+    max-width: 90%;
+    text-align: center;
+
+    margin: 0 auto; /* 마영오 */
     padding: 0;
     list-style: none;
     /* 3무 */
@@ -251,14 +255,36 @@ display: block;
 clear: both;
 }
 
+ul.bm li{
+    
+float: left;
+padding: 0 5px;
+}
 
 ul.bm a{
     color: #222;
     text-decoration: none; /* 밑줄없앰 */
-    font: bold 14px/2 "궁서";
+    font: bold 14px/2 "맑은 고딕";
 }
 
 ul.bm a:hover{
     color: red;
     text-decoration: underline;
+}
+
+/* 주소박스 */
+.info address{
+    width: 750px;
+    max-width: 90%;
+
+    margin: 20px auto;
+    font: normal 12px/2 "맑은 고딕";
+    text-align: center;
+    border: 5px double #555;
+    padding: 10px 0; /* 위아래 10px 양쪽 0 */
+}
+
+/* 하단 로고 박스 */
+#blogo{
+    text-align: center;
 }
