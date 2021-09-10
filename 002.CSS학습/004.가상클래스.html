@@ -72,20 +72,112 @@
             1) 같은 클래스명인데 요소별로 다른 세팅을 할때
             2) 클래스나 아이디의 요소명을 밝히고 싶을때
             */
-            
+
         ul.part1 {
             /* ul 기본 3가지 없애기 */
             margin: 0;
             padding: 0;
-            list-style: none; /* 블릿없앰 */
+            list-style: none;
+            /* 블릿없앰 */
 
             width: 800px;
-            margin: 0 auto; /* 마영오! */
+            margin: 0 auto;
+            /* 마영오! */
             margin-top: 20px;
-            border: 2px solid #ccc; /* 보더 */
+            border: 2px solid #ccc;
+            /* 보더 */
             border-radius: 20px;
             padding: 20px 0;
             text-align: center;
+        }
+
+        /* 1번 li */
+        ul.part1 li:first-child {
+            font-size: 40px;
+            font-family: 궁서;
+            color: red;
+        }
+
+        /* 오버시 */
+        ul.part1 li:first-child:hover {
+            font-size: 50px;
+        }
+
+        /* 2번 li */
+        ul.part1 li:nth-child(2) {
+            font-size: 30px;
+            font-family: 굴림;
+            color: blueviolet;
+        }
+
+        /* 오버시 */
+        ul.part1 li:nth-child(2):hover {
+            font-size: 40px;
+            font-family: 오이;
+            color: purple;
+            font-weight: bold;
+        }
+
+        /* 3번 li */
+        ul.part1 li:nth-child(3) {
+            /* 24px, 돋움, brown, bold, itelic; */
+            font-size: 24px;
+            font-style: italic;
+            color: brown;
+            font-weight: bold;
+            font-family: 돋움;
+
+        }
+
+        /* 오버시 */
+        ul.part1 li:nth-child(3):hover {
+            /* 24px, 돋움, brown, bold, itelic; */
+            font-size: 24px;
+            font-style: normal;
+            color: skyblue;
+            font-weight: bold;
+            font-family: 돋움;
+        }
+
+        /* 4번 li */
+        ul.part1 li:nth-child(4) {
+            /* 50px 궁서 dodgerblue */
+            font-size: 50px;
+            font-family: 궁서;
+            color: dodgerblue;
+            /* 처음에 한글<b> 숨기기 */
+        }
+
+        ul.part1 li:nth-child(4) b {
+            display: none;
+        }
+
+        /* 오버시 */
+        ul.part1 li:nth-child(4):hover {
+            /* 50px 궁서 dodgerblue */
+            font-size: 50px;
+            font-family: 궁서;
+            color: dodgerblue;
+            background-color: yellow;
+            /* 오버시 한글보이고 한자<span>숨기기 */
+
+        }
+
+        ul.part1 li:nth-child(4):hover b {
+            display: inline;
+        }
+
+        ul.part1 li:nth-child(4):hover span {
+            display: none;
+        }
+
+        /* 4번 이후 모든 li 전부셋팅 */
+        /* 틸드(~)를 사용한 다중형제요소 선택 */
+
+        ul.part1 li:nth-child(4)~li{
+            font-size: 25px;
+            font-family: "궁서";
+            color: orangered;
         }
     </style>
 
@@ -104,7 +196,7 @@
         <li>나 보기가 역겨워</li>
         <li>가실 때에는</li>
         <li>말없이 고이 보내 드리우리다</li>
-        <li>영변에 약산</li>
+        <li><b>영변</b><span>寧邊</span>에 <b>약산</b><span>藥山</span></li>
         <li>진달래꽃</li>
         <li>아름 따다 가실 길에 뿌리우리다</li>
         <li>가시는 걸음 걸음</li>
