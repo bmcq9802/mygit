@@ -54,6 +54,8 @@ body {
 /* 캐릭터박스 */
 #cbx {
     width: 90%;
+    height: 450px;
+
     /* height: 300px; 
     높이값이 없을때 자식요소 float때문에 자식요소를 인식하지 못함 */
     /* outline: 5px dashed lime; */
@@ -228,4 +230,35 @@ transition: margin-top .8s ease-in-out;
 
     text-align: justify;
     /* 양쪽정렬 */
+}
+
+/* 하단영역 */
+.info{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+}
+/* 하단링크 */
+ul.bm{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* 3무 */
+}
+
+ul.bm::after{ /* float 해제 */
+content: ;
+display: block;
+clear: both;
+}
+
+
+ul.bm a{
+    color: #222;
+    text-decoration: none; /* 밑줄없앰 */
+    font: bold 14px/2 "궁서";
+}
+
+ul.bm a:hover{
+    color: red;
+    text-decoration: underline;
 }
