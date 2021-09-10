@@ -57,7 +57,20 @@
         }
 
         /* 맨뒤 추가요소 ::after */
+        h2::after {
+            content: '';
+            /* 이미지를 url로 넣을경우 크기를 변경할 수 없으므로 박다를 만들고 배경이미지로 넣어서 크기를 변경한다 */
+            display: inline-block;
 
+            /* dispaly 설정을 안하면 inline이어서 크기적용이 되지 않는다. 따라서 block을 해야 적용되지만 줄바꿈이 되므로 inline-block을 사용한다 */
+            width: 50px;
+            height: 25px;
+            margin-left: 20px;
+            vertical-align: -5px;
+
+            background: url(./imgs/blogo.png) no-repeat center/cover;
+            outline: 2px dotted red;
+        }
 
         /* dl요소 디자인 */
         dl {
@@ -69,16 +82,54 @@
         }
 
         /* 반복되는 요소의 앞에 아이콘 가상요소로 넣기 */
+        dl dt::before {
+            content: "♣";
+            color: blue;
+            vertical-align: 2px;
+            margin-right: 5px;
+        }
 
 
         /* dd전체와 dd.story>h3에 가상요소 before적용하기 */
+        dl dd::before, dd.story>h3::before {
+            content: "♥";
+            color: red;
+            vertical-align: 2px;
+            margin-right: 5px;
+        }
 
 
         /* 스토리의 dd는 가상요소 없애기 */
+        dd.story::before {
+            display: none;
+        }
 
         /* .story의 첫번째 p태그의 첫번째 글자 디자인 변경하기 */
+        dd.story p:first-of-type::first-letter{
+            font-size: 50px;
+            color:hotpink;
+            font-weight: bold;
+        }
 
         /* .story의 첫번째 p태그의 첫번째줄 디자인 변경하기 */
+        dd.story p:first-of-type::first-line{
+            font-size: 24px;
+            color:blue;
+            font-weight: bold;
+        }
+
+        /* 두번째 p태그는 태그로 첫번째 글자, 첫번째 줄 변경 */
+        dd.story p:last-of-type b{
+            font-size: 50px;
+            color: hotpink;
+            font-weight: bold;
+        }
+
+        dd.story p:last-of-type span{
+            font-size: 24px;
+            color: blue;
+            font-weight: bold;
+        }
     </style>
 </head>
 
