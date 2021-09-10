@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>003.블록요소의 float</title>
     <style>
-
         /* 
 
         [블록요소의 float]
@@ -113,10 +112,13 @@
         }
 
         /*  float 해재용 가상요소 */
-        .flclb::after{
-            content: ' '; /* 마치 span 태그를 쓴것같음 */
-            display: block; /* 마치 div태그를 쓴것같음 */
-            clear: both; /* float해제! */
+        .flclb::after {
+            content: ' ';
+            /* 마치 span 태그를 쓴것같음 */
+            display: block;
+            /* 마치 div태그를 쓴것같음 */
+            clear: both;
+            /* float해제! */
         }
 
         /*
@@ -137,23 +139,24 @@
         display:block로 쓰면 마치 div를 쓴것과 같아짐
  */
 
- /* 경우4 */
-.case4{
-    overflow: hidden;
-}
+        /* 경우4 */
+        .case4 {
+            overflow: hidden;
+        }
 
- .case4 .bx {
-     float: left;
- }
- /* 경우5 */
+        .case4 .bx {
+            float: left;
+        }
 
- .case5{
-     overflow: hidden;
- }
+        /* 경우5 */
 
- .case5 .bx {
-     float: right;
- }
+        .case5 {
+            overflow: hidden;
+        }
+
+        .case5 .bx {
+            float: right;
+        }
     </style>
 </head>
 
@@ -193,7 +196,7 @@
         <div class="bx bx4 "></div>
         <div class="clb"></div>
     </div>
-    
+
     <h2>경우 5</h2>
     <div class="wrap case5">
         <div class="bx bx1 "></div>

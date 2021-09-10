@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>004.가상클래스</title>
+    <style>
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        /* a요소 가상클래스 주기  */
+
+        /* :link 링크최초상태 */
+        h2 a:link {
+            /* 콜론 하나는 가상클래스 */
+            color: red;
+            text-decoration: none;
+        }
+
+        /* 일반적으로 a요소 자체 디자인을 잡는다! */
+        h2 a {
+            color: hotpink;
+            text-decoration: none;
+            /* 밑줄없앰 */
+            text-shadow: 2px 2px 2px #777;
+
+        }
+
+        /* :hover 마우스 오버상태 */
+        h2:hover {
+            color: red;
+            text-decoration: overline;
+        }
+
+        /* 
+            글자 그림자
+            text-shadow : x축 y축 블러 색;
+        */
+
+        /* active 마우스로 눌려진 상태 (클!) */
+        h2 a:active {
+            color: blue;
+
+        }
+
+        /* :visited 링크 방문후(한번 클릭 후) */
+        /* h2 a:visited{
+            color: mediumaquamarine
+        } */
+
+        /* :focus 요소를 클릭하여 초점이 올때 */
+
+        h2 a:focus {
+            outline: 10px dotted orangered;
+        }
+        
+
+        /* 시인이름 */
+        h3 {
+            width: 800px;
+            margin: 0 auto;
+            /* 마영오! - 블록가로중앙! */
+            text-align: right;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>004.가상클래스</h1>
+
+    <h2>
+        <a href="#">진달래꽃</a>
+    </h2>
+
+    <h3>김소월</h3>
+
+    <ul class="part1">
+        <li>나 보기가 역겨워</li>
+        <li>가실 때에는</li>
+        <li>말없이 고이 보내 드리우리다</li>
+        <li>영변에 약산</li>
+        <li>진달래꽃</li>
+        <li>아름 따다 가실 길에 뿌리우리다</li>
+        <li>가시는 걸음 걸음</li>
+        <li>놓인 그 꽃을</li>
+        <li>사뿐히 즈려밟고 가시옵소서</li>
+        <li>나 보기가 역겨워</li>
+        <li>가실 때에는</li>
+        <li>죽어도 아니 눈물 흘리우리다</li>
+    </ul>
+
+</body>
+
+</html>
