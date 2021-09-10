@@ -21,18 +21,21 @@ body {
 
 /* -webkit- 벤더사명( 크롬, 사파리 ) 접두어 */
 
-.scbar::-webkit-scrollbar{ /* 전체 스크롤바 크기 */
-    width: 50px;
+.scbar::-webkit-scrollbar {
+    /* 전체 스크롤바 크기 */
+    width: 30px;
 
 }
 
-.scbar::-webkit-scrollbar-thumb{ /* 스크롤바 */
+.scbar::-webkit-scrollbar-thumb {
+    /* 스크롤바 */
     background-color: yellow;
     border-radius: 5px;
-    
+
 }
 
-.scbar::-webkit-scrollbar-track{/* 스크롤바 트랙 */
+.scbar::-webkit-scrollbar-track {
+    /* 스크롤바 트랙 */
     background-color: hotpink;
     border-radius: 5px;
 }
@@ -87,6 +90,7 @@ body {
 
 
 
+
 /* 캐릭터 이미지 */
 .ci>img
 
@@ -133,12 +137,69 @@ body {
 
 /* 캐릭터 설명 박스 */
 .cd {
-    height: 250px;
+    height: 0;
+    /* 마우스 오버시 250px */
     overflow: auto;
-    margin-top: 15px;
+    /* 넘치면 스크롤바 */
+    margin-top: 5px 10px 0;
+    border-radius: 100px 0 0 100px;
+    /* 
+    둥근 모서리 방향별로 주기!
+    boder-radious: 왼위 오른위 오른아래 왼아래;
+    (왼쪽위부터 시계방향으로 설정)
+    */
+
     background: url(../images/eachBG.jpg) no-repeat center/cover;
 
+
+
+    /* 트렌지션으로 애니메이션 설정하기
+    transition : 속성명 시간 이징 지연시간;
+
+    -트렌지션이란? css속성값이 변경되는 과정을 애니메이션으로 보여주는 속성
+
+    -형식 :
+        transition : 속성명 시간 이징 지연시간;
+        -> 속시이지!
+
+    -설정값 :
+        1) 속성명 - 애니메이션 지정 대상 속성
+            예컨대 height값을 쓰면 height에 대한 애니만 나옴!
+            ->all 이라고 쓰거나 안쓰면 모든 변경에 대한 애니!
+        
+        2) 시간 - 애니메이션 시간설정
+            ->초단위, 뒤에 s라는 단위를 
+            ->초단위중 0.5 이런식의 소숫점 앞자리가 0이면 이것을 생략하여 표현하기도 함
+        
+        3) 이징 - 애니메이션 가속도설정
+                ease-in 시작할때 천천히
+                ease-out 끝날때 천천히
+                ease-in-out 시작과 끝에 천천히
+                linear 등속도
+                ease 약한정도로 시작과 끝에 천천히
+        
+        4) 지연시간 - 애니메이션 시작 전 대기시간
+                - 초단위 (뒤에s)
+
+        -> 왜 속성값을 쓰게 해놨나?
+        속시이지의 순서로 속성별로 설정을 모두 다르게 여러개를 설정할 수 있음! 아주 뛰어남!
+
+    */
+
+    transition: all 0.8s ease-out 0.1s;
+
 }
+
+
+
+/* 캐릭터 개별박스(.cat)에 마우스 오버시 .cd높이값 변경 */
+
+.cat:hover .cd {
+    height: 250px;
+}
+
+/* 캐릭터 개별박스(.cat)에 마우스 오버시 .cd높이값 변경 */
+
 
 /* 캐릭터설명 타이틀 */
 .cd h3 {
@@ -150,14 +211,11 @@ body {
 .cd p {
     padding: 10px;
 
-/* font: 스타일 두께 크기 / 줄간격 글자체;
+    /* font: 스타일 두께 크기 / 줄간격 글자체;
     font: 스 두 크 / 줄 체;*/
 
     font: italic bold 14px/1.5 '오이';
 
-    text-align: justify; /* 양쪽정렬 */
+    text-align: justify;
+    /* 양쪽정렬 */
 }
-
-
-
-    
