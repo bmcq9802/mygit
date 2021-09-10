@@ -86,7 +86,17 @@ body {
 
     /* 마진 패딩 포함하기 */
     box-sizing: border-box;
+
+
+/* 트랜지션: 속시이지 */
+transition: margin-top .8s ease-in-out;
 }
+
+/* 캐릭터개별박스(.cat)에 마우스 오버시 마진top올라가기 */
+.cat:hover {
+    margin-top: -50px;
+}
+
 
 
 
