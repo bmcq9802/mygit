@@ -250,7 +250,7 @@ ul.bm{
 }
 
 ul.bm::after{ /* float 해제 */
-content: ;
+content:"";
 display: block;
 clear: both;
 }
