@@ -1,97 +1,85 @@
 @charset "utf-8";
 /* 도깨비 메인 CSS - main.css */
 
-/* 초기화 세팅 */
-html,
-body {
+/* 초기화 셋팅 */
+html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    /* 보이는 화면만큼 화면 높이값 채우기 */
+    height: 100%;/* 보이는 화면 높이값 채우기 */
 }
 
-body {
-    /* 배경 한번에 세팅하기 */
-    /* background: 색 이미지 반복 고정 위치/크기; */
-    background: url(../images/bg_mainvisual.jpg) no-repeat center/cover;
-    background-attachment: fixed;
+body{
+    /* 배경 한번에 셋팅하기! */
+    /* background: 색 이미지 반복 고정 위치/크기;
+    background: 색이반고윙/크; */
+    background: url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
+
 }
 
 /* 스크롤바 트랙 변경하기 클래스 */
-
-/* -webkit- 벤더사명( 크롬, 사파리 ) 접두어 */
-
-.scbar::-webkit-scrollbar {
-    /* 전체 스크롤바 크기 */
-    width: 30px;
-
+/* -webkit- 벤더사명(크롬,사파리) 접두어 */
+.scbar::-webkit-scrollbar{/* 전체 스크롤바 크기 */
+    width: 7px;
 }
-
-.scbar::-webkit-scrollbar-thumb {
-    /* 스크롤바 */
-    background-color: yellow;
+.scbar::-webkit-scrollbar-thumb{/* 스크롤바 */
+    background-color: #666;
     border-radius: 5px;
-
 }
-
-.scbar::-webkit-scrollbar-track {
-    /* 스크롤바 트랙 */
-    background-color: hotpink;
+.scbar::-webkit-scrollbar-track{/* 스크롤바 트렉 */
+    background-color: #ddd;
     border-radius: 5px;
 }
 
-/* 상단영역 */
+/* 1. 상단영역 */
 
-/* 로고박스 */
-.logo img {
-    /* 이미지 마진값 조정 */
+/* 로고 */
+.logo img{/* 이미지 마진위치조정 */
     margin-top: 45px;
     margin-left: 70px;
 }
 
 /* 2. 메인영역 */
 
-/* 캐릭터박스 */
-#cbx {
+/* 캐릭터 박스 */
+#cbx{
     width: 90%;
     height: 450px;
-
     /* height: 300px; 
-    높이값이 없을때 자식요소 float때문에 자식요소를 인식하지 못함 */
-    /* outline: 5px dashed lime; */
-
+        자식요소 float때문에
+        자식요소를 인식하지 못함!
+        높이값을 없을때 높이값이 안나옴!
+    */
     margin: 0 auto;
-    margin-top: 50px;
+    /* 마영오! - 가로중앙정렬 */
+    /* outline: 15px dashed lime; */
 }
-
-
-
-/* 가상요소로 float 해제 */
-.clb::after {
+/* 가상요소로 float해제 */
+.clb::after{
     content: '';
     display: block;
     clear: both;
 }
 
-/* 개별 캐릭터박스 공통 */
-.cat {
-    width: 25%;
-    /* 4등분 */
-    height: 100%;
-    /* 높이값이 없으면 auto */
-    /* outline: 10px dotted blue; */
+/* 개별 캐릭터 박스 공통 */
+.cat{
+    width: 25%;/* 4등분 */
+    /* height: 100%; 
+    높이값이 없으면 auto이고 내용만큼 늘어남!!!*/
     float: left;
-    /* float : 블록요소가 옆으로 흐르게 함  */
+    /* 블록요소가 옆으로 흐르게함
+    left값을 주면 나는 왼쪽 다른요소는
+    오른쪽에 올 수 있게 함 */
 
     /* 안쪽여백 */
     padding: 5px;
 
-    /* 마진 패딩 포함하기 */
+    /* 마진,패딩 포함하기 속성 */
     box-sizing: border-box;
 
+    /* outline: 10px dotted blue; */
 
-/* 트랜지션: 속시이지 */
-transition: margin-top .8s ease-in-out;
+    /* 트랜지션: 속시이지 */
+    transition: margin-top .8s ease-in-out;
 }
 
 /* 캐릭터개별박스(.cat)에 마우스 오버시 마진top올라가기 */
@@ -99,49 +87,37 @@ transition: margin-top .8s ease-in-out;
     margin-top: -50px;
 }
 
-
-
-
-
 /* 캐릭터 이미지 */
-.ci>img
-
-/* > 직계자식 이미지만! 만약 띄어쓰기만 하면 모든 자식을 다 바꿔버린다 */
-    {
-    width: 100%
-        /*이미지의 height는 자동(비율유지) */
-    ;
+.ci>img{/* 직계자식 이미지만! */
+    width: 100%;
+    /* 이미지의 height는 자동(비율유지) */
 }
-
 /* 캐릭터 이름 */
-.ci span {
-    display: block;
-    /* 블록변경 */
-    text-align: center;
-    /* 가로중앙 적용! */
+.ci span{
+    display: block;/* 블록변경 */
+    text-align: center;/* 가로중앙 적용! */
     margin-top: -22%;
-    /* 비율로 이미지가 변경되므로 마진도 상대적으로 변경되게 함 */
+    /* 비율로 이미지가 변경되므로
+    마진도 상대적으로 변경되게함! */
 }
 
 /* 캐릭터 이름 이미지 */
 .ci span img {
-    width: 60%;
+    width: 40%;
 }
 
 /* 캐릭터 이름 첫번째 이미지 숨기기 */
-/* display:none;  사용 */
-.ci span img:first-child {
+/* display:none사용 */
+.ci span img:first-child{
     display: none;
 }
-
-/* .cat박스에 마우스오버시 */
+/* .cat박스에 마우스 오버시 */
 /* 캐릭터 이름 첫번째 이미지 보이기 */
-/* 원래 이미지는 display:inline; */
+/* 원래 이미지는 display:inline */
 .cat:hover .ci span img:first-child {
     display: inline;
 }
-
-/* .cat박스에 마우스오버시 */
+/* .cat박스에 마우스 오버시 */
 /* 캐릭터 이름 마지막 이미지 숨기기 */
 .cat:hover .ci span img:last-child {
     display: none;
@@ -149,142 +125,130 @@ transition: margin-top .8s ease-in-out;
 
 /* 캐릭터 설명 박스 */
 .cd {
-    height: 0;
-    /* 마우스 오버시 250px */
-    overflow: auto;
-    /* 넘치면 스크롤바 */
-    margin-top: 5px 10px 0;
-    border-radius: 100px 0 0 100px;
+    height: 0px;/* 마우스오버시 250px */
+    overflow: auto;/* 넘치면 스크롤바 */
+    margin-top: 15px;
+    border-radius: 20px 0 0 20px;/* 오른쪽위,오른쪽아래 */
     /* 
-    둥근 모서리 방향별로 주기!
-    boder-radious: 왼위 오른위 오른아래 왼아래;
-    (왼쪽위부터 시계방향으로 설정)
+        둥근 모서리 방향별로 주기!
+        border-radius: 왼위 오른위 오른아래 왼아래;
+        (왼쪽위 부터 시계방향설정)
     */
-
     background: url(../images/eachBG.jpg) no-repeat center/cover;
 
+    /* 
+    [ 트랜지션으로 애니메이션 설정하기 ]
 
-
-    /* 트렌지션으로 애니메이션 설정하기
-    transition : 속성명 시간 이징 지연시간;
-
-    -트렌지션이란? css속성값이 변경되는 과정을 애니메이션으로 보여주는 속성
-
-    -형식 :
-        transition : 속성명 시간 이징 지연시간;
+    - 트랜지션이란? CSS속성값이 변경되는 과정을
+    애니메이션으로 보여주는 속성
+    
+    - 형식:
+        transition: 속성명 시간 이징 지연시간;
         -> 속시이지!
-
-    -설정값 :
+    - 설정값:
         1) 속성명 - 애니메이션 지정 대상 속성
-            예컨대 height값을 쓰면 height에 대한 애니만 나옴!
-            ->all 이라고 쓰거나 안쓰면 모든 변경에 대한 애니!
-        
+            예컨데 height값을 쓰면 
+            height에 대한 애니만나옴!
+            -> all 이라고 쓰거나 안쓰면 
+                모든 변경에 대한 애니!
         2) 시간 - 애니메이션 시간설정
-            ->초단위, 뒤에 s라는 단위를 
-            ->초단위중 0.5 이런식의 소숫점 앞자리가 0이면 이것을 생략하여 표현하기도 함
-        
+                -> 초단위로 표시 , 뒤에 s라는 단위를 씀
+                -> 초단위 중 0.5s 이런식의 소숫점 앞자리가 0이면
+                이것을 생략하여 표현하기도 함 -> .5s
         3) 이징 - 애니메이션 가속도설정
                 ease-in 시작할때 천천히
                 ease-out 끝날때 천천히
                 ease-in-out 시작과 끝에 천천히
                 linear 등속도
                 ease 약한정도로 시작과 끝에 천천히
+        4) 지연시간 - 애니메이션 시작전 대기시간
+                - 초단위(뒤에 s)
         
-        4) 지연시간 - 애니메이션 시작 전 대기시간
-                - 초단위 (뒤에s)
-
         -> 왜 속성값을 쓰게 해놨나?
-        속시이지의 순서로 속성별로 설정을 모두 다르게 여러개를 설정할 수 있음! 아주 뛰어남!
+        속시이지 의 순서로 속성별로 설정을 모두 다르게
+        여러개를 설정할 수 있음!!! 아주 뛰어남!!!
+
+        예) transform: width .3s ease-in,
+                        height .5s ease-out .5s;
+                    
+        ->>> 마우스 오버시 이징설정시 양방향을 모두
+        같은 설정으로 하고자 할때는 over에 설정말고
+        원본에 설정한다-> over아닌곳에 설정함!!!
 
     */
-
-    transition: all 0.8s ease-out 0.1s;
-
+    transition: height .8s ease-in-out;
 }
-
-
-
-/* 캐릭터 개별박스(.cat)에 마우스 오버시 .cd높이값 변경 */
-
-.cat:hover .cd {
+/* 캐릭터개별박스(.cat)에 마우스 오버시 .cd높이값 변경 */
+.cat:hover .cd{
     height: 250px;
 }
 
-/* 캐릭터 개별박스(.cat)에 마우스 오버시 .cd높이값 변경 */
-
-
 /* 캐릭터설명 타이틀 */
-.cd h3 {
-    padding: 20px;
+.cd h3{
+    padding: 5px 10px 0px;
 }
 
 /* 캐릭터설명 문단 */
-
-.cd p {
+.cd p{
     padding: 10px;
 
-    /* font: 스타일 두께 크기 / 줄간격 글자체;
-    font: 스 두 크 / 줄 체;*/
+    font: 14px/2 '맑은 고딕', '돋움', arial;
+    /* font: 스타일 두께 크기/줄간격 글자체;
+    font: 스 두 크/줄 체; */
 
-    font: italic bold 14px/1.5 '오이';
-
-    text-align: justify;
-    /* 양쪽정렬 */
+    text-align: justify;/* 양쪽정렬 */
 }
 
 /* 하단영역 */
 .info{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 15px;
 }
 /* 하단링크 */
 ul.bm{
-    width: 800px;
+    width: 720px;
     max-width: 90%;
-    text-align: center;
 
-    margin: 0 auto; /* 마영오 */
+    margin: 0 auto;/* 마영오! */
     padding: 0;
     list-style: none;
-    /* 3무 */
+    /* 3無 */
 }
-
-ul.bm::after{ /* float 해제 */
-content:"";
-display: block;
-clear: both;
+ul.bm::after{/* float해제 */
+    content: '';
+    display: block;
+    clear: both;
 }
-
 ul.bm li{
-    
-float: left;
-padding: 0 5px;
+    float: left;
+    padding: 0 5px;
 }
-
 ul.bm a{
     color: #222;
-    text-decoration: none; /* 밑줄없앰 */
+    text-decoration: none;/* 밑줄없앰 */
     font: bold 14px/2 "맑은 고딕";
 }
-
 ul.bm a:hover{
     color: red;
-    text-decoration: underline;
+    text-decoration: underline;/* 밑줄 */
 }
 
 /* 주소박스 */
 .info address{
-    width: 750px;
+    width: 720px;
     max-width: 90%;
 
-    margin: 20px auto;
+    margin: 20px auto;/* 위아래 20px 양쪽auto(중앙) */
     font: normal 12px/2 "맑은 고딕";
-    text-align: center;
-    border: 5px double #555;
-    padding: 10px 0; /* 위아래 10px 양쪽 0 */
-}
+    text-align: center;/* 글자중앙 */
 
-/* 하단 로고 박스 */
+    border: 5px double #555;
+    padding: 10px 0;/* 위아래 10px 양쪽0 */
+}
+/* 하단로고 박스 */
 #blogo{
     text-align: center;
+    /* 인라인요소 중앙정렬 */
 }
+
+
