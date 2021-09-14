@@ -151,7 +151,7 @@ li {
 .gnb>ul>li:nth-child(3):hover .smenu {/* 서브메뉴 */
     height: 120px;
 }
-.gnb>ul>li:nth-child(3):hover ::after {/* 가상요소배경 */
+.gnb>ul>li:nth-child(3):hover::after {/* 가상요소배경 */
     height: 130px;
     border-bottom: 2px solid red;
 }
@@ -159,7 +159,7 @@ li {
 .gnb>ul>li:nth-child(4):hover .smenu {/* 서브메뉴 */
     height: 60px;
 }
-.gnb>ul>li:nth-child(4):hover ::after {/* 가상요소배경 */
+.gnb>ul>li:nth-child(4):hover::after {/* 가상요소배경 */
     height: 70px;
     border-bottom: 2px solid red;
 }
@@ -178,7 +178,6 @@ li {
     width: 100%;
     /* 부모요소를 꽉 채움 */
     height: 0;
-    border-bottom: 2px solid red;
     background-color: #fff;
 
     /* 부모요소 .top의 하단 보더 보이게하기 위해 마진탑 이동 */
