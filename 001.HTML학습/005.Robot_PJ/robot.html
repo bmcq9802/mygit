@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robot PJ</title>
     <style>
-        html,body{
+        html,
+        body {
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -25,8 +26,8 @@
         /* 로봇 페이지 로고 */
         h1#logo {
             position: fixed;
-            top: 50px;
-            left: 50px;
+            top: calc(50% - 100px);
+            left: calc(50% - 100px);
             /* 무조건 화면기준! */
             width: 200px;
             height: 200px;
@@ -65,22 +66,52 @@
 
             margin: 0;
             padding: 0;
+
+            /* 애니메이션 : 이시이지반방마 */
+            animation: logoAni 2s ease-in-out 1s forwards;
+            /* 1초후에 2초간 처음과 마지막에 천천히 애니후 끝상태 유지 */
         }
 
+        /* 애니메이션 키프레임 */
+        @keyframes logoAni {
+
+            /* 시작설정 - 처음값이 css 원본과 같으면 생략! */
+            /* from { 
+                top: calc(50% - 100px);
+                left: calc(50% - 100px);
+            } */
+            /* 끝설정 */
+            to {
+                top: 50px;
+                left: 50px;
+            }
+        }
+
+        /* 키프레임 */
 
 
         /* 로봇 머리 */
         #head {
             position: relative;
             /* 부모자격 */
-            left: 100%;/* 화면오른쪽 바깥에 나가있음! */
+            left: 100%;
+            /* 화면오른쪽 바깥에 나가있음! */
             width: 250px;
             height: 250px;
             margin: 0 auto;
             /* 마영오! */
             margin-top: 100px;
             background: url(./images/metal01.jpg) no-repeat center/cover;
+            /* animation 이시이지반방마 */
+            animation: RAni .6s ease-out 3s forwards;
         }
+
+        /* 애니메이션 키프레임 - 머리와 몸 공통 애니키프레임 */
+        @keyframes RAni {
+            to{
+                left: 0;
+            }
+        }/* 키프레임 */
 
         /* 눈1 */
         #eye1 {
@@ -150,13 +181,15 @@
         #body {
             position: relative;
             /* 부모자격 */
-            left: -100%;/* 화면왼쪽에 나가있음! */
+            left: -100%;
+            /* 화면왼쪽에 나가있음! */
             width: 250px;
             height: 300px;
             margin: 0 auto;
             /* 마영오! */
             margin-top: 50px;
             background: url(./images/metal01.jpg) no-repeat center/cover;
+            animation: RAni .6s ease-out 4s forwards;
         }
 
         /* 목 */
@@ -238,7 +271,7 @@
         }
 
         /* 로봇설명박스 */
-        #rdesc{
+        #rdesc {
             width: 800px;
             margin: 350px auto 100px;
             /* 위 양쪽(중앙) 아래 */
@@ -256,8 +289,9 @@
             box-shadow: inset 0 0 60px cyan;
             /* 박스 내부그림자 글로우효과 */
         }
+
         /* 로봇설명제목 */
-        #rdesc h2{
+        #rdesc h2 {
             color: lime;
             /* 글자색 */
             font-size: 35px;
@@ -265,48 +299,52 @@
             text-align: center;
             /* 글자정렬중앙 */
         }
+
         /* 설명출처 */
-    #rdesc small{
-        display: block;/* 원래 inline을 변경함 */
-        text-align: center;/* 글자중앙적용! */
-        color: #ff0;
-    }
+        #rdesc small {
+            display: block;
+            /* 원래 inline을 변경함 */
+            text-align: center;
+            /* 글자중앙적용! */
+            color: #ff0;
+        }
 
-    /* 설명문단 */
-    #rdesc p{
-        font-size: 15px;
-        /* 글자크기 */
-        line-height: 25px;
-        /* 줄간격 */
-        letter-spacing: 1px;
-        /* 자간 */
-        word-spacing: 2px;
-        /* 단어간격 */
+        /* 설명문단 */
+        #rdesc p {
+            font-size: 15px;
+            /* 글자크기 */
+            line-height: 25px;
+            /* 줄간격 */
+            letter-spacing: 1px;
+            /* 자간 */
+            word-spacing: 2px;
+            /* 단어간격 */
 
-        /* 가독성을 위한 다단설정 */
-        /* 다단표기(다중열속성) */
-        column-count: 3;
-        /* 다중열 개수 */
-        column-rule: 5px dotted lime;
-        /* 다중열 구분선 - 값설정은 보더와 같음(두께 종류 색상) */
-        column-gap: 50px;
-        /* 다중열 사이간격 - 구분선 오른쪽 간격조정 */
+            /* 가독성을 위한 다단설정 */
+            /* 다단표기(다중열속성) */
+            column-count: 3;
+            /* 다중열 개수 */
+            column-rule: 5px dotted lime;
+            /* 다중열 구분선 - 값설정은 보더와 같음(두께 종류 색상) */
+            column-gap: 50px;
+            /* 다중열 사이간격 - 구분선 오른쪽 간격조정 */
 
-        text-align: justify;
-        /* 양쪽정렬 */
-        word-break: break-all;
-        /* 단어깨기-다깨! 단어단위로 붙어있는 것을 철자하나씩깸*/
-        text-indent: 20px;
-        /* 첫줄 들여쓰기(마이너스는 반대방향) */
-    }
-    /* 첫글자 크게하기!!! -> 가상요소::first-letter */
-    #rdesc p::first-letter {
-        font-size: 30px;
-        font-weight: bold;
-        color: lightsalmon;
-    }
+            text-align: justify;
+            /* 양쪽정렬 */
+            word-break: break-all;
+            /* 단어깨기-다깨! 단어단위로 붙어있는 것을 철자하나씩깸*/
+            text-indent: 20px;
+            /* 첫줄 들여쓰기(마이너스는 반대방향) */
+        }
 
-    /* 
+        /* 첫글자 크게하기!!! -> 가상요소::first-letter */
+        #rdesc p::first-letter {
+            font-size: 30px;
+            font-weight: bold;
+            color: lightsalmon;
+        }
+
+        /* 
         [ CSS로 애니메이션 하기! ]
 
         - 시간에 따라 CSS설정을 변경하여 애니메이션을 하도록
@@ -362,9 +400,6 @@
             - 마지막상태를 유지하고 싶을때 
                 forwards(앞쪽에.. 즉, 애니 끝장면)
     */
-
-
-
     </style>
 </head>
 
@@ -454,7 +489,7 @@
             commercial, digital and programmable robot was built by George Devol in 1954 and was named the Unimate. It
             was sold to General Motors in 1961 where it was used to lift pieces of hot metal from die casting machines
             at the Inland Fisher Guide Plant in the West Trenton section of Ewing Township, New Jersey.[9]
-<br><br>
+            <br><br>
             Robots have replaced humans[10] in performing repetitive and dangerous tasks which humans prefer not to do,
             or are unable to do because of size limitations, or which take place in extreme environments such as outer
             space or the bottom of the sea. There are concerns about the increasing use of robots and their role in
