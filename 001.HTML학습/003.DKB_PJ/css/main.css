@@ -13,6 +13,9 @@ body {
     이 코드 설정한다!!! */
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Gugi&family=Nanum+Pen+Script&display=swap');
+
+
 /* 스크롤바 트랙 변경하기 클래스 */
 /* -webkit- 벤더사명(크롬,사파리) 접두어 */
 .scbar::-webkit-scrollbar {
@@ -30,6 +33,12 @@ body {
     /* 스크롤바 트렉 */
     background-color: #ddd;
     border-radius: 5px;
+}
+
+/* 설명박스에 폰트넣기 */
+
+div.scbar{
+    font-family: 'Black And White Picture', sans-serif;
 }
 
 /* 공통 초기화 */
@@ -104,11 +113,13 @@ h1.logo img {
 }
 
 .gnb>ul>li{
+    font-family: 'Black And White Picture', sans-serif;
     padding: 0 17px;
     /* 양쪽을 동일하게 밀고 사이간격은 34px */
 }
 
 .gnb>ul>li>a{
+    font-family: 'Black And White Picture', sans-serif;
     display: block;/* 높이값 적용위해 */
     height: 54px;/* 적용되나? */
     color: #000;
