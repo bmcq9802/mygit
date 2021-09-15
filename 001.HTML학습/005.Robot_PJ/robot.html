@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robot PJ</title>
     <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            /* 가로스크롤 숨기기 */
+        }
+
         body {
             /* 배경: 색이반고윙/크 */
             background: url(./images/bg.jpg) no-repeat fixed top/cover;
@@ -66,6 +73,7 @@
         #head {
             position: relative;
             /* 부모자격 */
+            left: 100%;/* 화면오른쪽 바깥에 나가있음! */
             width: 250px;
             height: 250px;
             margin: 0 auto;
@@ -142,6 +150,7 @@
         #body {
             position: relative;
             /* 부모자격 */
+            left: -100%;/* 화면왼쪽에 나가있음! */
             width: 250px;
             height: 300px;
             margin: 0 auto;
@@ -236,10 +245,105 @@
             border: 3px solid #fff;
             border-radius: 20px;
             padding: 15px 30px;
+            /* 패딩 : 위아래 양쪽 */
 
             color: #fff;
-
+            /* 글자색 */
+            text-shadow: 1px 1px 1px #000;
+            /* 글자그림자: x y 블러 색 */
+            background-color: rgba(0, 0, 0, 0.527);
+            /* 반투명 배경색 */
+            box-shadow: inset 0 0 60px cyan;
+            /* 박스 내부그림자 글로우효과 */
         }
+        /* 로봇설명제목 */
+        #rdesc h2{
+            color: lime;
+            /* 글자색 */
+            font-size: 35px;
+            /* 글자크기 */
+            text-align: center;
+            /* 글자정렬중앙 */
+        }
+        /* 설명출처 */
+    #rdesc small{
+        display: block;/* 원래 inline을 변경함 */
+        text-align: center;/* 글자중앙적용! */
+        color: #ff0;
+    }
+
+    /* 설명문단 */
+    #rdesc p{
+        font-size: 15px;
+        /* 글자크기 */
+        line-height: 25px;
+        /* 줄간격 */
+        letter-spacing: 1px;
+        /* 자간 */
+        word-spacing: 2px;
+        /* 단어간격 */
+
+        /* 가독성을 위한 다단설정 */
+        /* 다단표기(다중열속성) */
+        column-count: 3;
+        /* 다중열 개수 */
+        column-rule: 5px dotted lime;
+        /* 다중열 구분선 - 값설정은 보더와 같음(두께 종류 색상) */
+        column-gap: 50px;
+        /* 다중열 사이간격 - 구분선 오른쪽 간격조정 */
+
+        text-align: justify;
+        /* 양쪽정렬 */
+        word-break: break-all;
+        /* 단어깨기-다깨! 단어단위로 붙어있는 것을 철자하나씩깸*/
+        text-indent: 20px;
+        /* 첫줄 들여쓰기(마이너스는 반대방향) */
+    }
+    /* 첫글자 크게하기!!! -> 가상요소::first-letter */
+    #rdesc p::first-letter {
+        font-size: 30px;
+        font-weight: bold;
+        color: lightsalmon;
+    }
+
+    /* 
+        [ CSS로 애니메이션 하기! ]
+
+        - 시간에 따라 CSS설정을 변경하여 애니메이션을 하도록
+        키프레임을 설정하고 이것을 호출함으로 의도된 연출을
+        구현하는 것이 CSS 애니메이션이다!
+
+        [ 애니메이션 키프레임 만들기 ]
+
+        1. 두장면 키프레임
+        @keyframes 키프레임이름 {
+            from{시작CSS설정}
+            to{끝나는CSS설정}
+        }
+        또는
+        @keyframes 키프레임이름 {
+            0%{시작CSS설정}
+            100%{끝나는CSS설정}
+        }
+
+        -> 만약 from설정과 초기설정이 같다면 from은 생략가능!
+
+        2. 여러장면 키프레임
+        @keyframes 키프레임이름 {
+            0%{CSS설정}
+            10%{CSS설정}
+            20%{CSS설정}
+            ....
+            90%{CSS설정}
+            100%{CSS설정}
+        }
+
+        - 장면에 대한 시간 계산은? 전체시간 * %소수점변경수치
+        - 전체시간은 호출시 설정함!
+    */
+
+
+
     </style>
 </head>
 
