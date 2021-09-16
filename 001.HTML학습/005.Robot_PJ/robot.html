@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robot PJ</title>
     <style>
-        html,body{
+        html{
+            scroll-behavior: smooth;
+            /* a요소 #위치 이동시 스크롤 애니메이션 설정 */
+        }
+
+        html,
+        body {
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -21,7 +27,7 @@
         /* body>*{
             outline: 5px dashed lime;
         } */
-  
+
         /* 로봇 페이지 로고 */
         h1#logo {
             position: fixed;
@@ -69,7 +75,7 @@
 
             /* 애니메이션: 이시이지반방마 */
             animation: logoAni 2s ease-in-out 1s forwards,
-            /* 1초후에 2초간 처음과 마지막에 천천히 
+                /* 1초후에 2초간 처음과 마지막에 천천히 
             애니후 끝상태유지(기본값은 1번만 실행!) */
                 logoAni2 1s ease-in-out 3s infinite alternate;
             /* 앞의 애니시간을 기다려 3초후 한번동작을 1초간 
@@ -78,27 +84,33 @@
 
         /* 애니메이션 키프레임 */
         @keyframes logoAni {
+
             /* 시작설정 - 처음값이 CSS원본과 같으면 생략! */
             /* from{
                 top: calc(50% - 100px);
                 left: calc(50% - 100px);
             } */
             /* 끝설정 */
-            to{
+            to {
                 top: 50px;
                 left: 50px;
             }
-        }/* 키프레임 */
+        }
+
+        /* 키프레임 */
 
         /* 추가 키프레임 */
         @keyframes logoAni2 {
-            from{
+            from {
                 transform: rotate(30deg);
             }
-            to{
+
+            to {
                 transform: rotate(-30deg);
             }
-        } /* 키프레임 */
+        }
+
+        /* 키프레임 */
 
 
 
@@ -106,7 +118,8 @@
         #head {
             position: relative;
             /* 부모자격 */
-            left: 100%;/* 화면오른쪽 바깥에 나가있음! */
+            left: 100%;
+            /* 화면오른쪽 바깥에 나가있음! */
             width: 250px;
             height: 250px;
             margin: 0 auto;
@@ -120,10 +133,12 @@
 
         /* 애니메이션 키프레임 - 머리와 몸 공통 애니키프레임 */
         @keyframes RAni {
-            to{
+            to {
                 left: 0;
             }
-        }/* 키프레임 */
+        }
+
+        /* 키프레임 */
 
         /* 눈1 */
         #eye1 {
@@ -193,7 +208,8 @@
         #body {
             position: relative;
             /* 부모자격 */
-            left: -100%;/* 화면왼쪽에 나가있음! */
+            left: -100%;
+            /* 화면왼쪽에 나가있음! */
             width: 250px;
             height: 300px;
             margin: 0 auto;
@@ -238,24 +254,31 @@
 
             /* 애니메이션:이시이지반방마 */
             animation: armAni1 .8s ease-in-out 4s forwards,
-                    armAni2 .3s ease-in-out 4.8s infinite alternate;
+                armAni2 .3s ease-in-out 4.8s infinite alternate;
 
         }
+
         /* 처음에 팔올리기 키프레임 */
         @keyframes armAni1 {
-            to{
+            to {
                 transform: rotate(-140deg);
             }
-        }/* 키프레임 */
+        }
+
+        /* 키프레임 */
         /* 빠이빠이 키프레임 */
         @keyframes armAni2 {
-            from{/* 값이 중간에 변경되어서 from필요함! */
+            from {
+                /* 값이 중간에 변경되어서 from필요함! */
                 transform: rotate(-140deg);
             }
-            to{
+
+            to {
                 transform: rotate(-170deg);
             }
-        }/* 키프레임 */
+        }
+
+        /* 키프레임 */
 
         /* 왼다리 */
         #leg1 {
@@ -306,7 +329,7 @@
         }
 
         /* 로봇설명박스 */
-        #rdesc{
+        #rdesc {
             width: 800px;
             margin: 350px auto 100px;
             /* 위 양쪽(중앙) 아래 */
@@ -324,8 +347,9 @@
             box-shadow: inset 0 0 60px cyan;
             /* 박스 내부그림자 글로우효과 */
         }
+
         /* 로봇설명제목 */
-        #rdesc h2{
+        #rdesc h2 {
             color: lime;
             /* 글자색 */
             font-size: 35px;
@@ -333,48 +357,52 @@
             text-align: center;
             /* 글자정렬중앙 */
         }
+
         /* 설명출처 */
-    #rdesc small{
-        display: block;/* 원래 inline을 변경함 */
-        text-align: center;/* 글자중앙적용! */
-        color: #ff0;
-    }
+        #rdesc small {
+            display: block;
+            /* 원래 inline을 변경함 */
+            text-align: center;
+            /* 글자중앙적용! */
+            color: #ff0;
+        }
 
-    /* 설명문단 */
-    #rdesc p{
-        font-size: 15px;
-        /* 글자크기 */
-        line-height: 25px;
-        /* 줄간격 */
-        letter-spacing: 1px;
-        /* 자간 */
-        word-spacing: 2px;
-        /* 단어간격 */
+        /* 설명문단 */
+        #rdesc p {
+            font-size: 15px;
+            /* 글자크기 */
+            line-height: 25px;
+            /* 줄간격 */
+            letter-spacing: 1px;
+            /* 자간 */
+            word-spacing: 2px;
+            /* 단어간격 */
 
-        /* 가독성을 위한 다단설정 */
-        /* 다단표기(다중열속성) */
-        column-count: 3;
-        /* 다중열 개수 */
-        column-rule: 5px dotted lime;
-        /* 다중열 구분선 - 값설정은 보더와 같음(두께 종류 색상) */
-        column-gap: 50px;
-        /* 다중열 사이간격 - 구분선 오른쪽 간격조정 */
+            /* 가독성을 위한 다단설정 */
+            /* 다단표기(다중열속성) */
+            column-count: 3;
+            /* 다중열 개수 */
+            column-rule: 5px dotted lime;
+            /* 다중열 구분선 - 값설정은 보더와 같음(두께 종류 색상) */
+            column-gap: 50px;
+            /* 다중열 사이간격 - 구분선 오른쪽 간격조정 */
 
-        text-align: justify;
-        /* 양쪽정렬 */
-        word-break: break-all;
-        /* 단어깨기-다깨! 단어단위로 붙어있는 것을 철자하나씩깸*/
-        text-indent: 20px;
-        /* 첫줄 들여쓰기(마이너스는 반대방향) */
-    }
-    /* 첫글자 크게하기!!! -> 가상요소::first-letter */
-    #rdesc p::first-letter {
-        font-size: 30px;
-        font-weight: bold;
-        color: lightsalmon;
-    }
+            text-align: justify;
+            /* 양쪽정렬 */
+            word-break: break-all;
+            /* 단어깨기-다깨! 단어단위로 붙어있는 것을 철자하나씩깸*/
+            text-indent: 20px;
+            /* 첫줄 들여쓰기(마이너스는 반대방향) */
+        }
 
-    /* 
+        /* 첫글자 크게하기!!! -> 가상요소::first-letter */
+        #rdesc p::first-letter {
+            font-size: 30px;
+            font-weight: bold;
+            color: lightsalmon;
+        }
+
+        /* 
         [ CSS로 애니메이션 하기! ]
 
         - 시간에 따라 CSS설정을 변경하여 애니메이션을 하도록
@@ -436,8 +464,48 @@
             forwards (앞쪽에... 즉, 애니끝장면)
     */
 
+    /* 글박스 유도 링크 */
+    .link{
+        position: absolute;
+        top: 100px;
+        right: 50px;
+        font-size: 40px;
+        text-shadow: 2px 2px 2px #000;
 
+    }
+    .link a{
+        color:#fff;
+        text-decoration: none;
 
+    }
+    .link a:hover{
+        color: red;
+        text-decoration: underline;
+    }
+    /* 위로가기 버튼 */
+    .btnTop{
+        position: fixed;
+
+        bottom: 50px;
+        right: 50px;
+
+        width: 100px;
+        height: 100px;
+
+        text-align: center;
+        line-height: 100px;
+        background-color: #ccc;
+        color: blue;
+        font-size: 24px;
+        font-weight: bold;
+        border-radius: 50%;
+
+        text-decoration: none;
+    }
+    .btnTop:hover{
+        background-color: yellow;
+        color: red;
+    }
     </style>
 </head>
 
@@ -445,6 +513,13 @@
     <!-- 로봇 페이지 로고 -->
     <h1 id="logo">R2D2</h1>
 
+    <!-- 내용보기 링크 타이틀 -->
+    <h2 class="link">
+        <a href="#rdesc">What is Robot?</a>
+        <!-- a요소에 href 속성값으로 "#id명"을 사용하면 같은 페이지 안에 있는 id요소 박스의 상단 라인으로 스크롤이 이동된다
+        -> 기본기능임!
+        -->
+    </h2>
     <!-- 로봇 머리 -->
     <div id="head">
         <!-- 눈1 -->
@@ -527,7 +602,7 @@
             commercial, digital and programmable robot was built by George Devol in 1954 and was named the Unimate. It
             was sold to General Motors in 1961 where it was used to lift pieces of hot metal from die casting machines
             at the Inland Fisher Guide Plant in the West Trenton section of Ewing Township, New Jersey.[9]
-<br><br>
+            <br><br>
             Robots have replaced humans[10] in performing repetitive and dangerous tasks which humans prefer not to do,
             or are unable to do because of size limitations, or which take place in extreme environments such as outer
             space or the bottom of the sea. There are concerns about the increasing use of robots and their role in
@@ -537,7 +612,9 @@
             the future.
         </p>
     </div>
-
+<!-- 위로이동버튼 -->
+<a href="#" class="btnTop">TOP</a>
+<!-- href값으로 "#"은 맨위로 이동 -->
 </body>
 
 </html>

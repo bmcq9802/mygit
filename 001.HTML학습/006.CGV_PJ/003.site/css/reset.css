@@ -1,22 +1,21 @@
 @charset "utf-8";
 /* CGV PJ 리셋 CSS - reset.css */
 
-/* 1. 마진, 패딩 없애기 */
-html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, dt, dd{
+/* 1. 마진,패딩 없애기 */
+html,body,h1,h2,h3,h4,h5,h6,ul,ol,dl,dt,dd,p{
     margin: 0;
     padding: 0;
 }
 
 /* 2. a요소 리셋 */
 a {
-    color: #fff;
-    text-decoration: none;
-
+    color: #fff;/* 글자색 */
+    text-decoration: none;/* 밑줄 */
 }
 
-/* 3. ul, ol, 리셋 */
-ul, ol{
-    list-style: none; /* 블릿, 숫자 제거 */
+/* 3. ul,ol 리셋 */
+ul,ol{
+    list-style: none;/* 블릿/숫자제거 */
 }
 
 /* 4. li 플롯 */
@@ -24,8 +23,9 @@ li{
     float: left;
 }
 
-/* 5. 플롯 지우기 */
-/* .clb 애프터는 플롯을 지울 필요가 있는 요소가 있을경우 클래스를 주면 가상요소가 셋팅된다 */
+/* 5. float 지우기 */
+/* .clb::after는 float을 지울 필요가 있는
+요소가 있을 경우 클래스를 주면 가상요소가 셋팅된다 */
 ul::after, ol::after, .clb::after{
     content: '';
     display: block;
