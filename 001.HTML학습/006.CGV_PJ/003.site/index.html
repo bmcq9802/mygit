@@ -74,6 +74,86 @@
     <header id="top" class="part">
         <!-- 1-1.페이지타이틀 -->
         <h1 class="tit">CGV 예고편 상영관</h1>
+        <!-- 1-2.전체메뉴(GNB) -->
+        <nav class="gnb">
+            <ul class="glist">
+                <li>
+                    <a href="#">영화</a>
+                    <!-- 서브메뉴 -->
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="#">무비차트</a>
+                            </li>
+                            <li>
+                                <a href="#">HD 트레일러</a>
+                            </li>
+                            <li>
+                                <a href="#">무비파인더</a>
+                            </li>
+                            <li class="tbar">
+                                <a href="#">CGV아트하우스</a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">예매</a>
+                    <!-- 서브메뉴 -->
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="#">빠른예매</a>
+                            </li>
+                            <li>
+                                <a href="#">상영시간표</a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">극장</a>
+                    <!-- 서브메뉴 -->
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="#">CGV 극장</a>
+                            </li>
+                            <li>
+                                <a href="#">특별관</a>
+                            </li>
+                            <li class="tbar">
+                                <a href="#">CLUB 서비스</a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">이벤트&amp;컬처</a>
+                    <!-- 서브메뉴 -->
+                    <div class="smenu">
+                        <ol>
+                            <li>
+                                <a href="#">이벤트</a>
+                            </li>
+                            <li>
+                                <a href="#">기프트샵</a>
+                            </li>
+                            <li>
+                                <a href="#">매거진</a>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ul>
+            <!-- 영사기박스 -->
+            <aside id="cam">
+                <!-- 영사기 이미지 -->
+                <img src="images/gnb.png" alt="영사기">
+                <!-- 빔표시박스 -->
+                <div class="bim"></div>
+            </aside>
+        </nav>
     </header>
     <!-- 2. 메인영역 -->
     <main id="cont" class="part">
@@ -87,56 +167,77 @@
                 <li>
                     <!-- 함수호출시 보내는 문자값은 반드시 반드시 반드시!!! 따옴표로 싼다! 그래야 문자값이다! -->
                     <a href="#" onclick="gogo('4Aqs-ojuE_Y');return false;">
+                        <!-- a요소 클릭시 #으로 인한 페이지 상단이동
+                        을 막기위해 JS호출시 return false코드를 추가한다! -->
                         <!-- 포스터 -->
-                        <img src="images/m1.jpg" alt="비와 당신의 이야기"></a>
+                        <img src="images/m1.jpg" alt="비와 당신의 이야기">
                         <!-- 영화정보 -->
                         <ol class="movtxt">
                             <li>비와 당신의 이야기</li>
                             <li>강하늘,천우희</li>
-                            <li>드라마,멜로
-                            </li>
+                            <li>드라마,멜로</li>
                         </ol>
-                    
+                    </a>
                 </li>
                 <li>
-                    <a href="#" onclick="gogo('O0s8Btiv_Dg')"><img src="images/m2.jpg" alt="서복"></a>
-                    <ol class="movtxt">
-                        <li>서복</li>
-                        <li>공유,박보검</li>
-                        <li>드라마</li>
-                    </ol>
+                    <a href="#" onclick="gogo('O0s8Btiv_Dg');return false;">
+                        <!-- 포스터 -->
+                        <img src="images/m2.jpg" alt="서복">
+                        <!-- 영화정보 -->
+                        <ol class="movtxt">
+                            <li>서복</li>
+                            <li>공유,박보검</li>
+                            <li>드라마</li>
+                        </ol>
+                    </a>
                 </li>
                 <li>
-                    <a href="#" onclick="gogo('TMwaYs4H7yI')"><img src="images/m3.jpg" alt="미나리"></a>   
-                    <ol class="movtxt">
-                        <li>미나리</li>
-                        <li>한예리,윤여정</li>
-                        <li>드라마</li>
-                    </ol>                 
+                    <a href="#" onclick="gogo('TMwaYs4H7yI');return false;">
+                        <!-- 포스터 -->
+                        <img src="images/m3.jpg" alt="미나리">
+                        <!-- 영화정보 -->
+                        <ol class="movtxt">
+                            <li>미나리</li>
+                            <li>한예리,윤여정</li>
+                            <li>드라마</li>
+                        </ol>
+                    </a>                    
                 </li>
                 <li>
-                    <a href="#" onclick="gogo('Qh4bQK_PY90')"><img src="images/m4.jpg" alt="더 스파이"></a>
-                    <ol class="movtxt">
-                        <li>더 스파이</li>
-                        <li>베네딕트 컴버배치</li>
-                        <li>스릴러</li>
-                    </ol>
+                    <a href="#" onclick="gogo('Qh4bQK_PY90');return false;">
+                        <!-- 포스터 -->
+                        <img src="images/m4.jpg" alt="더 스파이">
+                        <!-- 영화정보 -->
+                        <ol class="movtxt">
+                            <li>더 스파이</li>
+                            <li>베네딕트 컴버배치</li>
+                            <li>스릴러</li>
+                        </ol>
+                    </a>
                 </li>
                 <li>
-                    <a href="#" onclick="gogo('tfmRVC_GADw')"><img src="images/m5.jpg" alt="노매드랜드"></a>
-                    <ol class="movtxt">
-                        <li>노매드랜드</li>
-                        <li>프란시스 맥도맨드</li>
-                        <li>드라마</li>
-                    </ol>
+                    <a href="#" onclick="gogo('tfmRVC_GADw');return false;">
+                        <!-- 포스터 -->
+                        <img src="images/m5.jpg" alt="노매드랜드">
+                        <!-- 영화정보 -->
+                        <ol class="movtxt">
+                            <li>노매드랜드</li>
+                            <li>프란시스 맥도맨드</li>
+                            <li>드라마</li>
+                        </ol>
+                    </a>
                 </li>
                 <li>
-                    <a href="#" onclick="gogo('Pj7CadRf82k')"><img src="images/m6.jpg" alt="샹치"></a>
-                    <ol class="movtxt">
-                        <li>샹치</li>
-                        <li>시무리우</li>
-                        <li>액션</li>
-                    </ol>
+                    <a href="#" onclick="gogo('Pj7CadRf82k');return false;">
+                        <!-- 포스터 -->
+                        <img src="images/m6.jpg" alt="샹치">
+                        <!-- 영화정보 -->
+                        <ol class="movtxt">
+                            <li>샹치</li>
+                            <li>시무리우,양조위</li>
+                            <li>액션,판타지</li>
+                        </ol>
+                    </a>
                 </li>
             </ul>
         </nav>
