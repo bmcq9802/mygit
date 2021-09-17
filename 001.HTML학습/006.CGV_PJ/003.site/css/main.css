@@ -20,7 +20,7 @@ body {
     width: 1200px;
     margin: 0 auto;
     /* 가로중앙 */
-    outline: 3px dotted yellow;
+    /* outline: 3px dotted yellow; */
 }
 
 /************** 1. 상단영역 *******************/
@@ -41,8 +41,19 @@ body {
     font-family: 'Jua', sans-serif;
 
     /* 그림자를 이용한 Glow효과 */
-    text-shadow: 0 0 10px aquamarine;
+    text-shadow: 0 0 12px aquamarine;
+    /* 애니메이션 : 이시이지반방마 */
+    animation: titAni .7s ease-in-out infinite alternate;
 }
+
+
+/* 타이틀 글로우 효과 애니메이션 키프레임 */
+@keyframes titAni{
+    to{
+        text-shadow: 0 0 5px aquamarine;
+}
+    }
+
 
 /* 1-2. 전체메뉴(GNB) */
 .gnb {
@@ -197,6 +208,8 @@ body {
     /* 트랜지션: 속시이지 */
     transition: width .3s linear;
     /* linear 등속도 */
+    /* 애니메이션 이시이지반방마 */
+    animation: bimAni .02s ease infinite alternate;
 }
 /* .gnb에 마우스 오버시 빔등장! */
 .gnb:hover .bim{
@@ -205,7 +218,20 @@ body {
     /* 오버시 빔만 .5초 기다림(카메라 도는시간) */
 }
 
-
+/* 빔이 너울너울거리도록 애니메이션 키프레임 */
+@keyframes bimAni {
+    from{
+        opacity:0.9;
+    }
+    to{
+        opacity: 0.5;
+    }/* 키프레임 */
+    
+}
+/* opcity 속성
+-투명도를 주는 속성
+-0 완전투명, 1은 보임
+*/
 
 /*************** 2. 메인영역 ****************/
 #cont {
@@ -304,4 +330,23 @@ body {
 /************** 3. 하단영역 *******************/
 #info {
     height: 100px;
+}
+
+/* 3-1 회사정보박스 */
+#info address{
+    color: #fff;
+    font-style: normal; /* 이탤릭 해제 */
+    font-family: 'Cute Font', cursive;
+    font-size: 18px;
+    line-height: 20px;
+    /* 안쪽 여백 */
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* 하단로고 이미지 */
+#info img{
+    float: left;
+    /* 이미지는 왼쪽에 글자는 오른쪽으로 흐르게 */
+    margin-right: 20px;
 }
