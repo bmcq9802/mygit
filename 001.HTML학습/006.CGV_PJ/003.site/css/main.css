@@ -73,6 +73,10 @@ body {
     position: absolute;
     bottom: 56px;
     left: 252px;
+    overflow:hidden;
+    /* 넘치는 자식요소 숨기기 
+    -> .movtxt요소의 부모에 줘야 적용된다! */
+    
 }
 
 /* li디자인 */
@@ -104,6 +108,9 @@ body {
     line-height: 25px;
     color: #fff;
     text-align: center;
+
+    /* 트렌지션:속시이지 */
+    transition: top .4s ease-out;
 }
 
 /* 영화정보 li */
@@ -112,12 +119,17 @@ body {
     /* 플롯 해제 */
 }
 
-/* 첫번째 li는 영화제목 */
+/* 첫번째 li는 영화제목 */ 
 .movtxt li:first-child{
     color: aqua;
     font-size: 17px;
     letter-spacing: -1px;
     margin-top: 30px;
+}
+
+/* 포스터 리스트에 마우스오버시 영화정보 올라오기 */ /* ?? img에 걸면 왜 안되나연? */
+.mlist>ul>li:hover .movtxt{
+    top: 0;
 }
 
 /* 3. 하단영역 */
