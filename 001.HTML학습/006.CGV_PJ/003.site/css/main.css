@@ -331,7 +331,7 @@ body {
 /************** 3. 하단영역 *******************/
 #info {
     position: relative;
-    /* 부모자격 부여 */
+    /* 부모자격 */
     height: 100px;
 }
 /* 3-1.회사정보박스 */
@@ -353,7 +353,7 @@ body {
     margin-right: 20px;/* 오른쪽여백 */
 }
 
-/* 3-2 sns 버튼 */
+/* 3-2.sns버튼 */
 .sns{
     position: absolute;
     top: 20px;
@@ -366,31 +366,29 @@ body {
     height: 34px;
     margin: 2px;
     /* outline: 2px solid lime; */
-    /* 배경 이미지 넣기 - 스프라이츠(sprites) */
+    /* 배경이미지 넣기 - 스프라이츠(Sprites) */
     background: url(../images/sprites_logo.png) no-repeat;
-    /* 흑백처리 - 오버시 칼라(0%) */
-    filter:grayscale(100%)
+    /* 흑백처리-오버시칼라(0%) */
+    filter: grayscale(100%);
 }
-
-/* li에 마우스오버시 칼라로 */
-.sns li:hover{
+/* li오버시 칼라로! */
+.sns li:hover {
     filter: grayscale(0%);
 }
-
-/* 페북 */
+/* 페이스북 */
 .sns li:first-child{
     background-position: -509px -429px;
 }
-/* 트이타 */
+/* 트위터 */
 .sns li:nth-child(2){
     background-position: -551px -429px;
 }
-/* 인서타 */
+/* 인스타그램 */
 .sns li:last-child{
     background-position: -593px -429px;
 }
 
-/*  sns a요소 확장 */
+/* sns a요소 확장 */
 .sns a{
     display: block;
     width: 100%;
