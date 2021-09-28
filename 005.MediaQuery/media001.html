@@ -78,6 +78,8 @@
         body {
             margin: 0;
             padding: 0;
+            overflow: hidden;
+            /* 스크롤바없앰 */
         }
 
         body {
@@ -163,7 +165,7 @@
             /* 타이틀 가상요소 변경 */
             .tit::after {
                 content: "1200px 이하";
-                color: pink
+                color: pink;
             }
 
             /* 기존 이미지 숨기기 */
@@ -179,7 +181,6 @@
 
         }
 
-
         /* 미디어쿼리 1200px이하 */
 
         /* 1100px 이하 */
@@ -188,7 +189,7 @@
             /* 타이틀 가상요소 변경 */
             .tit::after {
                 content: "1100px 이하";
-                color: green;
+                color: lime;
             }
 
             /* 기존 이미지 숨기기 */
@@ -207,12 +208,15 @@
         /* 미디어쿼리 1100px 이하 */
 
         /* 1000px 이하 */
+
+
+        /* 미디어쿼리 1000px 이하 */
         @media only screen and (max-width:1000px) {
 
             /* 타이틀 가상요소 변경 */
             .tit::after {
                 content: "1000px 이하";
-                color: blue;
+                color: lightsalmon;
             }
 
             /* 기존 이미지 숨기기 */
@@ -228,16 +232,13 @@
 
         }
 
-
-        /* 미디어쿼리 1000px 이하 */
-
         /* 900px 이하 */
         @media only screen and (max-width:900px) {
 
             /* 타이틀 가상요소 변경 */
             .tit::after {
                 content: "900px 이하";
-                color: yellowgreen;
+                color: #ff47b8;
             }
 
             /* 기존 이미지 숨기기 */
@@ -262,7 +263,7 @@
             /* 타이틀 가상요소 변경 */
             .tit::after {
                 content: "850px 이하";
-                color: chartreuse
+                color: #47bbff;
             }
 
             /* 기존 이미지 숨기기 */
@@ -275,7 +276,6 @@
                 display: inline;
             }
 
-
         }
 
 
@@ -287,7 +287,7 @@
             /* 타이틀 가상요소 변경 */
             .tit::after {
                 content: "830px 이하";
-                color: gray
+                color: #72ff47;
             }
 
             /* 기존 이미지 숨기기 */
@@ -300,10 +300,28 @@
                 display: inline;
             }
 
-
         }
 
         /* 미디어쿼리 830px 이하 */
+        @media only screen and (max-width:830px) {
+
+            /* 타이틀 가상요소 변경 */
+            .tit::after {
+                content: "830px 이하";
+                color: #72ff47;
+            }
+
+            /* 기존 이미지 숨기기 */
+            .screen img:nth-child(6) {
+                display: none;
+            }
+
+            /* 다음 이미지 보이기 */
+            .screen img:nth-child(7) {
+                display: inline;
+            }
+
+        }
 
         /* 810px 이하 */
         @media only screen and (max-width:810px) {
@@ -311,7 +329,7 @@
             /* 타이틀 가상요소 변경 */
             .tit::after {
                 content: "810px 이하";
-                color: hotpink
+                color: #ff47b2;
             }
 
             /* 기존 이미지 숨기기 */
@@ -324,7 +342,6 @@
                 display: inline;
             }
 
-
         }
 
 
@@ -336,7 +353,7 @@
             /* 타이틀 가상요소 변경 */
             .tit::after {
                 content: "790px 이하";
-                color: lime
+                color: #f3ff47;
             }
 
             /* 기존 이미지 숨기기 */
@@ -349,7 +366,6 @@
                 display: inline;
             }
 
-
         }
 
         /* 미디어쿼리 790px 이하 */
@@ -360,7 +376,7 @@
             /* 타이틀 가상요소 변경 */
             .tit::after {
                 content: "770px 이하";
-                color: seashell
+                color: #4769ff;
             }
 
             /* 기존 이미지 숨기기 */
@@ -373,14 +389,19 @@
                 display: inline;
             }
 
-            /* bx 가상요소 배경이미지 변경 */
+            /* .bx가상요소 배경이미지 변경 */
             .bx::after {
                 background-position: top;
                 background-size: auto 60%;
             }
 
-        }
+            /* 스크린 */
+            .screen {
+                top: 135px;
+            }
 
+
+        }
 
 
         /* 미디어쿼리 770px 이하 */

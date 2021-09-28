@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>유형3.가로네비 서브 전체 드롭다운 전체창</title>
+    <title>유형3. 가로네비 서브 전체 드롭다운 전체창</title>
     <style>
         /* ul,ol 초기화셋팅 */
         ul,ol{
@@ -28,8 +28,7 @@
             /* 부모자격 - .gnb::before */
             background-color: #2f71eb;
         }
-        /* 유형변경 2. GNB 가상요소로 전체 서브창 배경 만들기 */
-
+        /* 유형변경2 : GNB가상요소로 전체 서브창 배경 만들기 */
         .gnb::before{
             content: '';
             display: block;
@@ -37,19 +36,19 @@
             top: 50px;
             /* 부모는? .gnb */
             width: 100%;
-            height: 0; /* 220px; */
+            height: 0;/* 오버시 220px로 변경 */
             background-color: #92c1ff;
             /* .smenu의 배경색과 동일 */
 
             /* 트랜지션: 속시이지 -> .smenu와 동일! */
             transition: height .4s ease-out;
         }
-
         /* .gnb에 오버시 가상요소 높이값 변경하기 */
         /* 가상요소 오버시엔 붙여서 바로 뒤에 쓴다! */
         .gnb:hover::before {
             height: 220px;
         }
+
 
         .gnb>ul{
             width: 800px;
@@ -98,11 +97,11 @@
             /* 트랜지션: 속시이지 */
             transition: height .4s ease-out;
         }
-        /* 유형변경1. gnb에 오버시 전체 서브 한꺼번에 보이기 */
+        /* 유형변경1 : .gnb에 오버시 전체 서브 한꺼번에 보이기 */
         .gnb:hover>ul>li .smenu{
             height: 200px;
         }
-    
+
         /* 상위메뉴 오버시 하위메뉴 a 글자색,배경색 */
         .smenu a:hover{
             color: navy;
@@ -111,7 +110,7 @@
     </style>
 </head>
 <body>
-    <h1>유형3.가로네비 서브 전체 드롭다운 전체창</h1>
+    <h1>유형3. 가로네비 서브 전체 드롭다운 전체창</h1>
     <nav class="gnb">
         <ul>
             <li><a href="#">Home</a></li>
