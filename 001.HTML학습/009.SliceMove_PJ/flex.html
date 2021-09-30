@@ -97,6 +97,167 @@
             height: 100px;
             border: 5px double #fff;
         }
+        /* 타이틀 하위 li공통 */
+        .tit>li{
+            width: 50px;
+            height: 50px;
+            border: 3px solid #fff;
+            border-radius: 50%;/* 원 */
+            background-color: #f00;
+            font: bold 14px/50px Verdana;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* 타이틀 1 */
+        .t1{
+            top: 5%;
+
+            /* flex box설정 */
+            display: flex;
+
+            /* flex 옵션 */
+            justify-content: space-evenly;
+            /* 
+                justify-content 속성
+                - 수평정렬속성 (justify 양쪽정렬의 뜻)
+                1) flex-start : 왼쪽끝(기본값)
+                2) flex-end : 오른쪽끝
+                3) center : 중앙
+                4) space-around : 아이템 요소 양쪽에 같은간격
+                5) space-between : 아이템 요소 사이간격 일정
+                                (처음과 끝이 구석에 붙어나옴)
+                6) space-evenly : 아이템 요소의 양쪽과 
+                                사이간격이 모두 일정함
+            */
+            align-items: center;
+            /* 
+                align-items 속성
+                - 한줄 수직정렬 속성
+                1) flex-start: 맨위(기본값)
+                2) flex-end: 맨아래
+                3) center : 세로중앙
+                4) stretch : 세로방향 꽉채워서 늘림
+                            (단, height 크기가 auto여야함!)
+                5) baseline : 각 요소에 글자가 있다면
+                            글자 아래쪽 기준선으로 정렬됨
+                            (글자의 line-height를 변경해 보면 됨!)
+            */
+        }
+
+        /* 타이틀2 */
+        .t2{
+            top: 20%;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            /* 글자 아랫줄을 기준으로 수직정렬함! */
+        }
+        .t2 li:nth-child(2){
+            line-height: 80px;
+        }
+        .t2 li:nth-child(4){
+            line-height: 30px;
+        }
+
+        /* 타이틀박스3 */
+        .t3{
+            top: 35%;
+
+            display: flex;
+            align-items: center;
+            /* 수직중앙정렬 */
+        }
+        /* 3번째 부터 li를 오른쪽끝으로 보내기! */
+        /* -> 왼쪽마진을 auto로 설정!!! */
+        .t3>li:nth-child(3){
+            margin-left: auto;
+        }
+
+        /* 타이틀박스4 */
+        .t4{
+            top: 5%;
+            left: 10%;
+            width: 150px;
+            height: 600px;
+
+            /* flex박스설정 */
+            display: flex;
+            flex-direction: column;
+            /* 진행방향 세로! */
+            align-items: center;
+            /* 진행방향에 따라 가로/세로의 정렬방향이 바뀐다 */
+        }
+        /* 4번째 li를 아래쪽 끝으로 보내기 */
+        .t4>li:nth-child(4){
+            margin-top: auto;
+            /* 위쪽마진을 자동으로 밀면서 아래쪽으로 이동 */
+        }
+
+        /* 타이틀박스5 */
+        /* flex 여러줄 설정하기 */
+        .t5 {
+            top: 50%;
+            height: 300px;
+
+            /* flex박스 설정 */
+            display: flex;
+            /* flex옵션 - 랩핑! */
+            flex-wrap: wrap;
+            /* 
+                flex-wrap 속성
+                - 박스 가로크기 보다 아이템 요소가 많을 경우
+                아랫줄로 줄바꿈 하려면 wrap으로 설정한다!
+                - 기본값은 nowrap임
+
+                -> 이 설정을 하지 않으면?
+                자동적으로 가로크기를 줄여서 한줄에 나온다!
+                이유는? 자식요소의 flex속성값으로 
+                flex-shrink가 1로 기본설정되어 있기때문이다!
+            */
+            justify-content: space-around;
+            /* 수평정렬 */
+            align-content: space-evenly;
+            /* 
+                align-content 속성 
+                - 여러줄일때 수직정렬
+                1) flex-start : 맨위(기본값)
+                2) flex-end : 맨아래
+                3) center : 세로방향중앙
+                4) space-around : 아이템 요소 상하에 같은간격
+                5) space-between : 아이템 요소 상하간격 일정
+                                (처음과 끝이 구석에 붙어나옴)
+                6) space-evenly : 아이템 요소의 상하와 
+                                사이간격이 모두 일정함
+            */
+            
+        }
+        /* 글자수를 맞추기 위해 li에 마진을 설정 */
+        .t5>li{
+            margin: 0 15px;
+        }
+
+        /* 타이틀박스6 */
+        /* 플렉스 랩핑박스에서 특정위치에서 줄바꿈하기 */
+        .t6{
+            top: 87%;
+            height: auto;
+
+            /* flex박스설정 */
+            display: flex;
+            flex-wrap: wrap;/* 자동 줄바꿈 */
+            justify-content: space-between;
+            /* 사이간격 일정 */
+        }
+        /* 줄바꿈할 곳에 li를 넣고 flex-basis를 100%로 줄바꿈역할을 해준다
+        단, 안보이게 처리할것! */
+        .tit .brk{
+            flex: basis 100%;
+            /* width를 100%준 효과와 동일 */
+            height: 0;
+            border: none;
+        }
+
     </style>
 </head>
 <body>
@@ -118,6 +279,66 @@
             <li>T</li>
             <li>T</li>
             <li>E</li>
+        </ol>
+        <!-- 타이틀박스2 -->
+        <ol class="tit t2">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀박스3 -->
+        <ol class="tit t3">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀박스4 -->
+        <ol class="tit t4">
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀박스5 -->
+        <ol class="tit t5">
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
+        </ol>
+        <!-- 타이틀박스6 -->
+        <ol class="tit t6">
+            <li>L</li>
+            <li>O</li>
+            <li>T</li>
+            <li>T</li>
+            <li>E</li>
+            <li>W</li>
+            <li>O</li>
+            <li>R</li>
+            <li>L</li>
+            <li>D</li>
         </ol>
 
 

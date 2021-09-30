@@ -398,8 +398,75 @@
             7. 중앙의 한계값 조건에 맞지 않으면(false이면) 
                 for문을 빠져나옴!
 
+         */
 
-         
+
+         /*////////////////////////////////////////////////////
+            함수명: gugu2
+            기능: 선택박스에서 선택된 구구단을 출력함
+            연결이벤트: change
+                - 선택박스(select)가 변경될때 발생하는 이벤트
+         */ ////////////////////////////////////////////////////
+         function gugu2(U) { // U - 선택박스 자신 전달변수
+
+             // 옵션값 변수
+             var opt = U.value;
+             // value는 선택된 option의 value값!
+
+             // 1. 호출 및 전달값 확인
+             console.log("구구단!" + opt);
+
+             // 2. 대상선정
+             // 출력대상: div.gugu2
+             var tg = document.querySelector(".gugu2");
+
+             // 3. 구구단 만들기
+             var cd = ""; // 빈문자로 초기할당!(아래에서 +=하려고)
+             cd += "<h2>" + opt + "단</h2>";
+
+             // for문 //////////////////////////
+             // initiate(시작하다 의 i문자를 많이씀)
+             for (var i = 1; i <= 9; i++) {
+
+                 // for문 전달변수확인
+                 // console.log("i는?"+i);
+
+                 // 중복실행코드 //
+                 cd += opt + " × " + i + " ＝ " +
+                     (opt * i) + " <br>";
+
+             } ////// for문 ///////////////////
+
+             // 문자열확인
+             console.log(cd);
+
+             // 4. 출력하기
+             tg.innerHTML = cd;
+
+
+         } /////////// gugu2 함수 //////////////////////////////
+         //////////////////////////////////////////////////////
+
+         /* 
+            [ while 문 ]
+            - 반복실행코드를 위한 조건으로 만드는 제어구문
+            - 구문형식:
+            ___________________________
+            시작값;
+            while(한계값){
+                실행코드;
+                증감;
+            }
+            ____________________________
+            - for문과 유사하나 시작값이 while문 윗쪽에 나옴
+            - 한계값은 while문 소괄호 안에 씀
+            - 증감은 while문 실행코드 내부에 씀
+            (주의사항: 만약 증감을 안쓰면 무한루프에 빠진다)
+
+            - while문은 사용용도에 따라 for문과 달리
+            조건에 맞을때 까지 반복 실행실행 구문으로도 사용됨
+            (예컨데 중복숫자가 안나오게 할때 등)
+            -> 이렇게 응용될 경우 시작값, 증감 없이도 사용가능!
          
          */
      </script>
@@ -431,7 +498,7 @@
          }
 
          /* 구구단 출력박스 */
-         .gugu {
+         .gugu,.gugu2 {
              width: 300px;
              height: 300px;
              overflow-y: scroll;
@@ -535,6 +602,41 @@
      <br>
      <!-- 구구단 출력박스 -->
      <div class="gugu"></div>
+
+
+     <hr>
+
+     <!-- while문 연습 -->
+     <h2>while문 연습</h2>
+     <h3>구구단 출력하기</h3>
+     <!-- onchange 이벤트속성: 선택박스 옵션이 변경될때발생 -->
+     <select name="sel2" id="sel2" onchange="gugu2(this)">
+         <!-- this키워드로 선택박스의 선택변경을 알 수 있다! -->
+         <option value="1">구구단을 선택하세요!</option>
+         <option value="2">2단</option>
+         <option value="3">3단</option>
+         <option value="4">4단</option>
+         <option value="5">5단</option>
+         <option value="6">6단</option>
+         <option value="7">7단</option>
+         <option value="8">8단</option>
+         <option value="9">9단</option>
+         <option value="10">10단</option>
+         <option value="11">11단</option>
+         <option value="12">12단</option>
+         <option value="13">13단</option>
+         <option value="14">14단</option>
+         <option value="15">15단</option>
+         <option value="16">16단</option>
+         <option value="17">17단</option>
+         <option value="18">18단</option>
+         <option value="19">19단</option>
+         <option value="20">20단</option>
+     </select>
+
+     <br>
+     <!-- 구구단 출력박스 -->
+     <div class="gugu2"></div>
 
      <!-- 
         select 요소
