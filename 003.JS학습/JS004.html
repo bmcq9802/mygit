@@ -97,11 +97,9 @@
             // 배열변수명 = [값1,값2,값3,...]
             // 이 방식이 가장 많이 사용되는 보편적인 방식임!
             // new Array() 라고 객체 생성을 하지 않아도 자동으로 생성됨!
-
-            var arr2 = ["삼일절", "태극기", 1919, 
-            function (){alert("대한독립만세!");}];
-
-            //배열에 함수를 넣을 수 있을까?? 있다!
+            var arr2 = ["삼일절", "태극기", 1919,
+                        function(){alert("대한독립 만세!");}];
+                        // 배열에 함수를 넣을 수 있을까? 있다!!!
 
             // 배열개수 찍기 : 배열변수명.length
             console.log("arr2의 배열변수의 개수:" + arr2.length);
@@ -115,10 +113,12 @@
             // innerText는 앞뒤공백이 반영되지 않는다
             // innerHTML을 사용하면 공백이 처리된다(태그도 처리됨)
 
-            // txt2 클릭시 배열값으로 넣은 함수 호출하기!
+            /// txt2클릭시 배열값으로 넣은 함수 호출하기!
             txt2.onclick = function(){
-                arr2[3](); // 4번째 배열값인 함수를 호출 (소괄호 중요!)
-            }; ///// click 이벤트 함수 //////
+                arr2[3]();// 4번째 배열값인 함수를 호출(소괄호중요)
+            }; //////// click 이벤트 함수 ////////
+
+
 
             // 3. 배열을 미리 생성하여 각각 할당하는 방법
             // 배열변수명 = [] -> 이 변수가 배열변수로 설정됨!
@@ -346,69 +346,70 @@
                 // \n 줄바꿈문자를 사용한다!
             }; /////// click이벤트 함수 ////////////
 
-
             // 미션: #txt6는 객체를 만들어서 자유출력하시오!
             // 자신이 영화를 선정하여 아래와 같은 항목으로
             // 영화정보를 셋팅하시오.
 
             // 변수명을 자신이 지어본다!
             var myMovie = {
-                // 1. 드라마제목
-                title: "오징어게임",
+                // 1. 영화제목
+                title: "미나리(Minari)",
                 // 2. 감독
-                director: "황동혁",
+                director: "정이삭",
                 // 3. 배우
-                actors: "이정재",
+                actors: "윤여정,한예리",
                 // 4. 장르
-                genre: "스릴러",
+                genre: "드라마",
                 // 5. 관람가
-                ratings: "18세관람가",
+                ratings: "12세관람가",
                 // 6. 예고편
                 trailer: function () {
                     // 1. 호출확인
                     console.log("예고편!");
-                    // 2. 영화박스 만들고 iframe 넣기
-                    // 대상 : body 끝에 추가! += 대입연산자 중요!!
-                    document.body.innerHTML +=
-                        '<div id="mv">' + 
-                            '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/b96oSVw75lA?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
-                            '<span class= "cbtn">×</span>' +
-                            '</div>';
+                    // 2. 영화박스만들고 iframe 넣기
+                    // 대상: body 끝에 추가! += 대입연산자 중요!!!
+                    document.body.innerHTML += 
+                    '<div id="mv">' +
+                    '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/lPYxbbKYYmE?autoplay=1&loop=1&playlist=lPYxbbKYYmE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+                    '<span class="cbtn">×</span>' +
+                    '</div>';
 
-                            // 삽입된 동영상 박스 css 설정하기
-                            var mv = document.getElementById("mv");
-                            mv.style.position = "fixed";
-                            mv.style.top = "50%";
-                            mv.style.left = "50%";
-                            mv.style.transform = "translate(-50%,-50%)";
-                            mv.style.width = "700px";
-                            mv.style.height = "450px";
+                    // 삽입된 동영상 박스 CSS설정하기!
+                    var mv = document.getElementById("mv");
+                    mv.style.position = "fixed";
+                    mv.style.top = "50%";
+                    mv.style.left = "50%";
+                    mv.style.transform = "translate(-50%,-50%)";
+                    mv.style.width = "700px";
+                    mv.style.height = "450px";
 
-                            // 닫기버튼 세팅
-                            var cbtn = document.querySelector(".cbtn");
-                            cbtn.style.position = "absolute";
-                            cbtn.style.top = "0";
-                            cbtn.style.right = "-70px";
-                            cbtn.style.width = "50px";
-                            cbtn.style.height = "50px";
-                            cbtn.style.backgroundColor = "blue";
-                            cbtn.style.textAlign = "center";
-                            cbtn.style.fontSize = "40px";
-                            cbtn.style.fontWeight = "bold";
-                            cbtn.style.color = "white";
-                            cbtn.style.borderRadius = "50%";
-                            cbtn.style.cursor = "pointer";
-                            cbtn.style.lineHeight = "40px";
+                    // 닫기버튼 셋팅
+                    var cbtn = document.querySelector(".cbtn");
+                    cbtn.style.position = "absolute";
+                    cbtn.style.top = "0";
+                    cbtn.style.right = "-70px";
+                    cbtn.style.width = "50px";
+                    cbtn.style.height = "50px";
+                    cbtn.style.backgroundColor = "blue";
+                    cbtn.style.textAlign = "center";
+                    cbtn.style.fontSize = "40px";
+                    cbtn.style.fontWeight = "bold";
+                    cbtn.style.color = "white";
+                    cbtn.style.borderRadius = "50%";
+                    cbtn.style.cursor = "pointer";
+                    cbtn.style.lineHeight = "40px";
 
-                            // 닫기버튼 클릭시 리로드!
-                            cbtn.onclick = function(){
-                                window.location.reload();
-                                // 페이지 새로고침
-                                // location.reload() 로 줄여쓰기도 함
-                            };///////////////////클릭이벤트함수////////////////////////////
+                    // 닫기버튼 클릭시 리로드!
+                    cbtn.onclick = function(){
+                        window.location.reload();
+                        // 페이지 새로고침
+                        // location.reload()로 줄여쓰기도함
+                    }; /////// click 이벤트 함수 //////
 
-                            
-                } /////////// trailer 메서드 //////////////
+
+
+
+                } //////// trailer 메서드 /////
 
             }; /////////// 영화정보 객체 ////////
 
@@ -418,49 +419,56 @@
             txt6.style.lineHeight = "34px"; // 줄간격조정
 
             txt6.innerHTML =
-                "▣드라마명: " + myMovie["title"] +
+                "▣영화명: " + myMovie["title"] +
                 "▣감독: " + myMovie.director +
                 "▣배우: " + myMovie.actors +
                 "<br>▣장르: " + myMovie.genre +
                 "▣등급: " + myMovie.ratings;
 
-            // 변수형 속성 객체의 호출시
-            // 변수명.속성명 또는 변수명["변수형 속성명"]
+            // 변수형 속성 객체의 호출시 
+            // 변수명.변수형속성명 또는 변수명["변수형속성명"]
 
-            // 마우스 오버시 툴팁과 손가락모양
-            txt6.title = "클릭하시면 " + myMovie.title + "예고편을 보실 수 있습니다!";
+            // 마우스 오버시 툴팁과 손가락모양 셋팅
+            txt6.title = "클릭하시면 " + myMovie.title + 
+            "예고편을 보실 수 있습니다!";
             txt6.style.cursor = "pointer";
 
             // 트레일러 함수 호출하기
             // #txt6를 클릭시
-            txt6.onclick = function () {
+            txt6.onclick = function(){
                 myMovie.trailer();
-            } //////////////// click 이벤트함수 ///////////////
+            }; ////// click 이벤트 함수 ///////
+
+
 
         }); /////////////// load ///////////////////////
         ////////////////////////////////////////////////
 
         /* 
-            [객체에 대한 단상]
-            - 객체는 배열처럼 데이터를 묶어서 저장하는 메모리공간 역할을 한다. 그런데 호출시에 번호로 호출하는 배열처럼 기계적이지 않고 사람이 잘 이해할 수 있는 문자로 호출값을 사용하는 아주 편리한 것이다!
+            [ 객체에 대한 단상 ]
+            - 객체는 배열처럼 데이터를 묶어서 저장하는 메모리공간
+            역할을 한다. 그런데 호출시에 번호로 호출하는 배열처럼
+            기계적이지 않고 사람이 잘 이해할 수 있는 문자로 호출
+            값을 사용하는 아주 편리한 것이다!
 
-            두루 널리 씁시당
+            두루 널리 쓰도록 하여라~~~~!
 
             ※ 정리!
+
             배열값 설정
-            var 변수명 = [ 값1, 값2, 값3, ... ]; <- 할당하는 애들은 전부 세미콜론이 들어간다, 세미콜론 없는애들을 알고있으면 편하다
+            var 변수명 = [값1,값2,값3,...];
 
             배열값 호출
             변수명[순번] -> 순번은 0부터!
 
             객체값 설정
-            var 변수명 = {속성명1:값, 속성명2:값, ....};
+            var 변수명 = {속성명1:값1,속성명2:값2,...};
 
             객체값 호출
-            변수명[속성명] -> 속성명을 따옴표로 싼 문자형이어야 함! 
-                (변수형 속성명도 따옴표로 싸면 호출된다)
+            변수명[속성명] -> 속성명을 따옴표로 싼 문자형이야야함!
+                             (변수형속성명도 따옴표로 싸면 호출됨)
             또는
-            변수명.속성명 -> 속성명이 반드시 변수형이어야 함
+            변수명.속성명 -> 속성명이 반드시 변수형이어야함!
 
         */
     </script>

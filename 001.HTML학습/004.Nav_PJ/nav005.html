@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title> 유형5. 세로네비 서브별 드롭다운 사이드형</title>
+    <title>유형5. 세로네비 서브별 드롭다운 사이드형</title>
     <style>
         /* ul,ol 초기화셋팅 */
         ul,ol{
@@ -35,6 +35,7 @@
         }
         .gnb>ul>li {
             position: relative;
+            /* 유형변경3 : 부모자격 - .smenu */
             width: 200px;
             text-align: center;
             outline: 2px dashed red;
@@ -69,9 +70,9 @@
         /* 서브메뉴 */
         .smenu{
             position: absolute;
-            /* 유형변경3 : top, left 위치설정+싸고있는 li부모자격 */
+            /* 유형변경3 : top,left위치설정+싸고있는 li부모자격 */
             top: 0;
-            left: 100%;
+            left: 100%;/* 오른쪽바깥으로 밀어냄 */
             width: 200px;
             background-color: #92c1ff;
             height: 0;
