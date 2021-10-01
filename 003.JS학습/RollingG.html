@@ -34,8 +34,23 @@
             padding-top: 20px;
             /* outline: 2px dotted red; */
         }
+
         /* 미니언즈 */
-        
+        #mini {
+            position: absolute;
+            top: 86%;/* 0으로! */
+            left: -100%;/* 0으로! */
+            /* 부모는? #wrap */
+            width: 150px;
+            transform: rotate(720deg);/* 0으로! */
+            transition: all 1.5s ease-out;
+        }
+        /* 미니언즈 변경클래스 */
+        #mini.on{
+            top: 0;
+            left: 0;
+            transform: rotate(0deg);
+        }
 
         /* 메인이미지박스 */
         #mbox {
@@ -75,13 +90,13 @@
         var num = 1; // 첫번째 이미지번호를 기억시킨다!
         // 2. 이미지 설명 배열변수
         var txt = [
-            "노랑잉꼬가 먹이를 꼭꼭 찍어먹어요~",
-            "분홍장미가 머리칼을 너풀너풀 날려요~",
-            "백조같은 거위가 뚱하니 바라보아요~",
-            "바이킹이 너무 어지러워 토가 나와요~",
-            "눈사람이 가짜인데 진짜같아 보여요~",
+            "노랑잉꼬야 먹자~ 구~구구구구~",
+            "나는 장미로 태어난 오스칼~",
+            "백조같은 거위가 뚱뚱맨이야~",
+            "바이킹에서 내리고싶어",
+            "두유워나빌더 스노맨~",
             "이 양은 보통양이 아니고 복제양 돌리예요~",
-            "잉꼬 한쌍이 영화를 찍어요~"
+            "잉꼬도 여자친구가 있는데"
         ];
         // 3.이미지 설명 글자색
         var tcolor = [
@@ -251,6 +266,23 @@
                 }; /////// click 이벤트 함수 ////////////
                 ////////////////////////////////////////
 
+                //// 일정시간뒤 미니언즈 이미지에 클래스 넣기 ! //
+                // 대상선정: #mini
+                var mini = document.querySelector("#mini");
+                setTimeout(() => {
+                    mini.classList.add("on");
+                }, 2000);
+
+                // 4초뒤 제거
+                setTimeout(() => {
+                    mini.classList.remove("on");
+                }, 4000);
+
+                // 6초뒤 toggle로 판단(없으면 넣고 있으면 빼고)
+                setTimeout(() => {
+                    mini.classList.toggle("on");
+                }, 6000);
+
 
 
                 /* 
@@ -269,6 +301,16 @@
                     -> 타임아웃함수를 지울때는 변수에 담고
                     아래 함수를 호출한다!
                     -> clearTimeout(변수)
+
+
+
+                    [ JS 클래스관련 내장함수 ]
+                    classList -> 클래스를 요소에 넣거나 
+                    빼기위한 속성을 지정해주는 내장속성
+                    (하위메서드)
+                    1. add(클래스명) : 클래스추가
+                    2. remove(클래스명) : 클래스제거
+                    3. toggle(클래스명) : 클래스있으면 넣고 없으면 제거
                 
                 */
 
@@ -297,18 +339,20 @@
         <a href="#" class="btn rb">
             <img src="./images/right_btn.png" alt="오른쪽버튼">
         </a>
+        <!-- 미니언즈 -->
+        <img src="./images/Minions.png" alt="미니언즈" id="mini">
     </div>
 
 
     <!-- 이미지별 설명 텍스트 출력박스 -->
     <h2 class="imgtxt">
-        노랑잉꼬가 먹이를 꼭꼭 찍어먹어요~
+        노랑잉꼬야 먹자~ 구~구구구구~
     </h2>
 
     <!-- 자동넘김 버튼박스 -->
     <div class="abtn">
-        <button class="start">자동넘김</button>
-        <button class="end">멈춤</button>
+        <button class="start"><img src="./images/auto.jpg" alt=""></button>
+        <button class="end"><img src="./images/stop.jpg" alt=""></button>
     </div>
 
 </body>
