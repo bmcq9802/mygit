@@ -114,6 +114,7 @@ body * {
 /* 상위 메뉴에 마우스 오버시 서브메뉴 보이기 */
 .smbx>li:hover .smsub{
     opacity: 1;
+    height: auto;
 }
 .smsub a{
     display: block;
