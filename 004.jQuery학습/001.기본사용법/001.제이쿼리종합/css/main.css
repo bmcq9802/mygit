@@ -13,6 +13,7 @@ body {
     background: url(../images/bg2.jpg) no-repeat center/cover;
 }
 
+/* 타이틀 */
 .tit {
     position: absolute;
     top: 0;
@@ -33,7 +34,20 @@ body {
 
     z-index: 999999;
 
+    transition: 3s ease-in;
 }
+
+/* .tit에 .on을 주면 값 변경하기 */
+.tit.on{
+    top:50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.tit.on2{
+    top:95%;
+    transform: translateX(-50%) rotate(6deg);
+}
+
 
 .building {
     position: absolute;
@@ -48,6 +62,12 @@ body {
     padding: 0;
     list-style: none;
     background: url(../images/bg.jpg) no-repeat 0/100% 100%;
+
+    transition: 3s ease-in;
+}
+
+.building.on3{
+    top:95%;
 }
 
 .building li {
@@ -61,6 +81,7 @@ body {
     font-size: 7vh;
     color: #ff0;
     text-shadow: 2px 2px 2px #000;
+
 }
 
 /* 미니언즈 주인공! */
