@@ -36,18 +36,16 @@ body {
 
     transition: 3s ease-in;
 }
-
 /* .tit에 .on을 주면 값 변경하기 */
 .tit.on{
-    top:50%;
+    top: 50%;
     transform: translateX(-50%) rotate(45deg);
 }
-
+/* 두번째 변경 */
 .tit.on2{
-    top:95%;
+    top: 95%;
     transform: translateX(-50%) rotate(6deg);
 }
-
 
 .building {
     position: absolute;
@@ -62,13 +60,26 @@ body {
     padding: 0;
     list-style: none;
     background: url(../images/bg.jpg) no-repeat 0/100% 100%;
-
-    transition: 3s ease-in;
 }
-
-.building.on3{
-    top:95%;
+/* 빌딩무너지기 클래스 */
+.building.on{
+    animation: shake 0.01s linear infinite alternate,
+            breakDown 3s ease-in 5s forwards;
 }
+/* 빌딩무너지기 키프레임 */
+@keyframes breakDown {
+    to{
+        top: 110%;
+        transform: rotate(-20deg);
+    }
+} /* 키프레임 */
+/* 빌딩흔들리기 키프레임 */
+@keyframes shake {
+    to{
+        left: 30.3%;
+    }
+} /* 키프레임 */
+
 
 .building li {
     position: relative;
@@ -81,7 +92,6 @@ body {
     font-size: 7vh;
     color: #ff0;
     text-shadow: 2px 2px 2px #000;
-
 }
 
 /* 미니언즈 주인공! */

@@ -38,9 +38,7 @@
     <script>
         // Get방식으로 넘어온 값 받기!
         let pm = location.href;
-        console.log(pm); 
-
-
+        console.log(pm);
         // location.href 의 두얼굴~~~
         // 1. 이퀄 왼쪽에 쓰면 오른쪽 url값으로 페이지 이동
         // 2. 이퀄 오른쪽에 쓰면 브라우저 url값을 가져옴!
@@ -49,12 +47,12 @@
         // indexOf(문자열) -> 찾는 문자열의 순번을 리턴함!
         // 만약 찾는 문자열이 없으면 -1을 리턴함!!!
         console.log("문자열찾기:"+pm.indexOf("?"));
+        
         if(pm.indexOf("?")===-1){
             alert("비정상적인 접근입니다!");
             location.href = "Get01.html";
-            //첫페이지로 돌아가기!
-        }/////////////// if ////////////////////////////////////////
-        
+            // 첫페이지로 돌아가기!
+        } ////////////// if //////////////////
 
         // url 문자값 가공처리하기 //
 
@@ -70,7 +68,6 @@
         // 3. escape변환문자 복원하기(unescape)
         pm = unescape(pm);
         console.log(pm);
-        // console.log(pm);
 
         // 4. 샵명과 색상명 연결하기 (객체만들기)
         let scolor = {
@@ -87,7 +84,7 @@
         //////// 로드구역 ////////////////////////
         // DOMContentLoaded는 html만 모두 그려지면 발생하는 이벤트!
         window.addEventListener("DOMContentLoaded",function(){
-    
+       
             // 로딩구역 확인
             console.log("로딩완료!!!");
 
@@ -102,9 +99,9 @@
 
             // 3. 메인박스 배경이미지 변경하기
             document.querySelector("#main")
-            .style.backgroundImage = 
-            "url(images/shop_" + scolor[pm] + ".jpg)"; /* [pm] 은 뭘까요.. 언제는 대괄호? 중괄호? 몰?루 */
-            // 배경이미지명 규칙 : shop_영어색상명.jpg
+            .style.backgroundImage =
+            "url(images/shop_" + scolor[pm] + ".jpg)";
+            // 배경이미지명 규칙: shop_영어색상명.jpg
 
 
         });/////////// 로드구역 //////////////////////////////////

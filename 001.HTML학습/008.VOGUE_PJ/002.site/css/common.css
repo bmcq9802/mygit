@@ -206,7 +206,7 @@
 /* GNB 플렉스 박스 */
 .gnb>ul {
     display: flex;
-    flex-wrap: wrap; /* ??? 플렉스랩이 하는일 ??? */
+    flex-wrap: wrap;
     /* 줄바꿈 */
     justify-content: center;
     /* 자식요소 가로 중앙정렬 */
