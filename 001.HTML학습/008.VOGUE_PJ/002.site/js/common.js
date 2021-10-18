@@ -50,11 +50,15 @@ $(function(){ ////// jQB ////////////////////////
             scSts = 0;//한번밖에 못들어옴!
             console.log("실행1");
             tm.addClass("on");
+            // 아래코드로 공간보정해봐유~!
+            $(".cont").css("margin-top","160px");
         } ////////// if //////////
         else if(scTop < 100 && scSts===0){ // 100미만
             scSts = 1;//한번밖에 못들어옴!
             console.log("실행2");
             tm.removeClass("on");
+            // 아래코드로 공간보정해봐유~!
+            $(".cont").css("margin-top","0px");
         } //////// else /////////////
 
 
@@ -74,8 +78,21 @@ $(function(){ ////// jQB ////////////////////////
         } ///////// else if //////////////
 
 
-
     }); //////////// scroll //////////////////////
+    //////////////////////////////////////////////
+
+    /// 탑버튼 이동 구현하기 /////
+    // 대상: .tbtn === tbtn변수
+    tbtn.click(function(e){ // e-이벤트전달변수
+        // 기본이동막기
+        e.preventDefault();
+
+        // 맨위로 이동하기
+        // 변경대상: html,body 두가지모두!
+        $("html,body").animate({
+            scrollTop: "0px"
+        }, 1000,"easeInOutQuad");
+    }); ///////// click ////////////
 
 
 
