@@ -14,14 +14,13 @@ $(function () { /////// jQB ///////////////////
                             text, password
         input[type=text],input[type=password]
         (유의사항: type=text 인 요소 중에서 아이디가 email2
-            인요소는 검사에서 제외함!)
-        제외하기 위한 선택자: input[type=text][id!=email2]
+            인요소는 검사에서 제외함!+모바일검색 input요소 제외추가!)
+        제외하기 위한 선택자: input[type=text][id!=email2][class!=search]
         -> (!=) 선택연산자는 제이쿼리전용임!
-
         - 제이쿼리 사용 메서드 : blur() 메서드
     
     */
-    $("input[type=text][id!=email2],input[type=password]")
+    $("input[type=text][id!=email2][class!=search],input[type=password]")
         .blur(function () {
             // console.log("블러써?");
 
@@ -61,8 +60,13 @@ $(function () { /////// jQB ///////////////////
 
             // 3. 빈값일 경우 "필수입력" 메시지 출력
             if (cv === "") {
-                $(this).siblings(".msg").text("필수입력!");
+                $(this).siblings(".msg").text("필수입력!")
+                .removeClass("on");// 글자색 복원!
                 // siblings(필터) -> 선택요소 이외의 형제들 중 특정요소
+
+                // 통과여부 false
+                pass = false;
+
             } /////////// if문: 빈값일때 ////////////
 
             // 4. 아이디일때 검사하기 ///////////////////
@@ -78,6 +82,9 @@ $(function () { /////// jQB ///////////////////
                     $(this).siblings(".msg")
                         .text("영문자로 시작하는 6~20글자 영문자/숫자")
                         .removeClass("on"); // 글자색 변경 제거
+
+                    // 통과여부 false
+                    pass = false;
 
                 } /////// if문 : 결과가 false일때 ////
                 else {
@@ -104,6 +111,9 @@ $(function () { /////// jQB ///////////////////
                     $(this).siblings(".msg")
                         .text("특수문자,문자,숫자포함 형태의 5~15자리");
 
+                    // 통과여부 false
+                    pass = false;
+
                 } ///// if문 : 결과가 false일때 ////
                 else { // 통과시 내용비우기 : empty()
 
@@ -122,6 +132,9 @@ $(function () { /////// jQB ///////////////////
 
                     $(this).siblings(".msg")
                         .text("비밀번호가 일치하지 않습니다!");
+
+                    // 통과여부 false
+                    pass = false;
 
                 } /////// if문 : 결과가 같지 않으면 true ///
                 else { // 통과시 내용비우기 : empty()
@@ -182,6 +195,9 @@ $(function () { /////// jQB ///////////////////
             eml1.siblings(".msg")
                 .text("맞지않는 이메일 형식입니다")
                 .removeClass("on"); //글자색 복원
+
+            // 통과여부 false
+            pass = false;
 
         } ////// else문 : 결과가 false일때 //////
 
@@ -293,6 +309,65 @@ $(function () { /////// jQB ///////////////////
 
     }); ////////////// change 함수 ////////////////
     //////////////////////////////////////////////
+
+
+    /////////////////////////////////////////////////////////
+    ////////// 가입하기(submit) 버튼 클릭시 처리하기 //////////
+    /////////////////////////////////////////////////////////
+    // 전체검사의 원리:
+    // 전역변수 pass를 설정하여 true를 할당하고
+    // 검사 중간에 불통과 사유발생시 false로 변경!
+    // 유효성검사 통과 여부를 판단한다!
+    // 검사방법: 기존의 이벤트함수인 blur 이벤트를 강제발생시킨다!
+    // 이벤트 발생메서드: trigger(이벤트명)
+    // //////////////////////////////////////////
+    let pass; // 검사용변수
+    $("#btnj").click(function(e){ // 서브밋버튼 클릭시
+
+        // 1. 서브밋 기능막기
+        e.preventDefault();
+
+        // 2. pass 통과여부 변수에 true할당!(처음시작)
+        pass = true;
+
+        // 3. 입력창 blur이벤트 발생시키기(전체검사)
+        // 대상: input[type=text][id!=email2],input[type=password]
+        // 이벤트발생 메서드: trigger(이벤트명) -> blue이벤트 발생!
+        $("input[type=text][id!=email2][class!=search],input[type=password]")
+        .trigger("blur");
+
+        console.log("통과여부:"+pass);
+
+        // 4. 검사결과에 따라 메시지 보이기 및 처리 ////
+        if(pass) { /// 통과시!
+
+            // 메시지 띄우기
+            alert("회원가입을 축하드립니다! 짝짝짝!");
+            // 원래는 post방식으로 DB에 회원정보 입력후
+            // 입력완료시에 위의 메시지를 띄워준다!
+
+            // 로그인페이지로 이동하기
+            location.replace("login.html");
+            // location.href = "login.html";
+            /* 
+                location.href 는 뒤로 가기시 history가 살아있어서
+                보안상 위험하다! 따라서 현재 페이지에
+                그대로 덮어쓰기로 위치 이동을 하는 방법을 쓴다!
+                location.replace(이동주소)
+                -> 현재 페이지 history가 덮어써져서 사라진다!
+                (전페이지 돌아가기 안됨!!!)
+            */
+
+        } /////////////// if ///////////////
+        else { // 불통과시!
+
+            alert("입력을 수정하세요!");
+
+        } //////////////// else ///////////
+
+    }); //////////////// click //////////////////////
+    ////////////////////////////////////////////////
+
 
 
 
