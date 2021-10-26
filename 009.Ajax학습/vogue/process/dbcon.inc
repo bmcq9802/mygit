@@ -1,7 +1,7 @@
 <?php
 
 /// DB연결 문자열 ///
-$servername = "112.175.184.75";//DB서버명
+$servername = "localhost";//DB서버명
 $username = "tombap8";//DB최고관리자권한
 $password = "kangnam21!";//root에는 비번이 없음
 $dbname = "tombap8";//사용DB명
